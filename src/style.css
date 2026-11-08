@@ -1140,3 +1140,5247 @@ main {
     width: 100%;
   }
 }
+/* キャラクター詳細画面 */
+.character-detail {
+  background: #ffffff;
+  border: 1px solid #e8eaf2;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 12px 35px rgba(25, 35, 70, 0.08);
+}
+
+/* 詳細画面の各項目 */
+.character-detail > div {
+  margin-bottom: 20px;
+  padding: 16px 18px;
+  background: #f8f9fd;
+  border-radius: 14px;
+  border: 1px solid #edf0f7;
+}
+
+/* 項目の見出し */
+.character-detail strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #59617d;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+/* 項目の内容 */
+.character-detail p {
+  margin: 0;
+  color: #202943;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* レーダーチャート */
+.character-radar-chart {
+  margin: 24px 0;
+  padding: 20px 12px;
+  background: linear-gradient(135deg, #fff6fa, #f5f6ff);
+  border: 1px solid #f0e6f1;
+  border-radius: 20px;
+}
+
+/* キャラクター画像 */
+.character-detail-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.character-detail-images img {
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e8eaf2;
+}
+
+/* スマートフォン表示 */
+@media (max-width: 600px) {
+  .character-detail {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .character-detail > div {
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+
+  .character-radar-chart {
+    padding: 16px 6px;
+  }
+}
+
+/* キャラクター詳細：項目カード */
+.character-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.character-detail-grid > div {
+  min-width: 0;
+  margin: 0;
+  padding: 14px;
+  background: #fff8fb;
+  border: 1px solid #f5dce8;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(241, 73, 140, 0.05);
+}
+
+.character-detail-grid > div > strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #b04e7c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.character-detail-grid > div > p {
+  margin: 0;
+  color: #27324b;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* 紹介文は横幅いっぱい */
+.character-detail-grid > div:first-child {
+  grid-column: 1 / -1;
+}
+
+/* スマートフォンでは詰め込みすぎない */
+@media (max-width: 480px) {
+  .character-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .character-detail-grid > div {
+    padding: 11px;
+    border-radius: 13px;
+  }
+}
+.character-detail-meta {
+  padding: 8px 12px !important;
+  background: #f5f6fb !important;
+  border-color: #e7e9f2 !important;
+}
+
+.character-detail-meta strong {
+  margin-bottom: 3px !important;
+  font-size: 11px !important;
+}
+
+.character-detail-meta p {
+  font-size: 12px !important;
+}
+
+.character-profile-chips {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+
+.character-profile-chip {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #f1498c;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* キャラクター紹介の項目 */
+.character-intro-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 0 20px;
+}
+
+.character-speech-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.character-info-card {
+  min-width: 0;
+  padding: 14px 16px;
+  background: #fff0f6;
+  border: 1px solid #f1498c;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+.character-info-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #d92e76;
+  font-size: 13px;
+}
+
+.character-info-card p {
+  margin: 0;
+  color: #25243a;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 400px) {
+  .character-speech-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* キャラクター紹介カード */
+.character-description-card {
+  min-width: 0;
+  padding: 18px;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border: 2px solid #f1498c;
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+
+.character-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+}
+
+.character-section-heading strong {
+  margin: 0;
+  color: #d92e76;
+  font-size: 15px;
+}
+
+.character-section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  background: #f1498c;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.character-description-text {
+  margin: 0;
+  color: #25243a;
+  font-size: 14px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.character-description-divider {
+  height: 2px;
+  margin: 18px 0;
+  background: #ffd0e2;
+  border-radius: 99px;
+}
+
+.character-detail-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.character-detail-images img {
+  display: block;
+  width: min(100%, 240px);
+  max-height: 320px;
+  object-fit: contain;
+  margin: 0;
+  border: 1px solid #ffd0e2;
+  border-radius: 14px;
+  background: #fff6fa;
+}
+
+@media (max-width: 600px) {
+  .character-description-card {
+    padding: 14px;
+  }
+
+  .character-detail-images img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* タグとメインカラー */
+.character-bottom-profile {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 20px;
+}
+
+.character-bottom-card {
+  min-width: 0;
+  padding: 16px;
+  background: #fff0f6;
+  border: 1px solid #f1498c;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+.character-bottom-card strong {
+  display: block;
+  margin-bottom: 12px;
+  color: #d92e76;
+  font-size: 13px;
+}
+
+.character-main-color {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #25243a;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.character-main-color-swatch {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #f1498c;
+}
+
+@media (max-width: 400px) {
+  .character-bottom-profile {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* タグとメインカラーを横並びにする */
+.character-bottom-profile {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+
+.character-bottom-card {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* スマートフォンでも横並びを維持 */
+@media (max-width: 400px) {
+  .character-bottom-profile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .character-bottom-card {
+    padding: 10px;
+  }
+}
+
+/* 作者・世界観を横並びでコンパクトに */
+.character-detail-grid > .character-detail-meta {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 8px 12px !important;
+  margin: 0 !important;
+}
+
+.character-detail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.character-detail-grid > .character-detail-meta {
+  flex: 1;
+}
+
+/* 作者・世界観の2項目だけ横並びにする */
+.character-detail-grid > .character-detail-meta:nth-child(1),
+.character-detail-grid > .character-detail-meta:nth-child(2) {
+  align-self: stretch;
+}
+
+.character-detail-grid > .character-detail-meta:nth-child(1) {
+  margin-bottom: -12px !important;
+}
+
+/* タグを広め、メインカラーを少し狭めに */
+.character-bottom-profile {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 20px;
+  width: 100%;
+  margin: 0 0 20px;
+  align-items: stretch;
+}
+
+.character-bottom-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 10px 12px;
+}
+
+.character-bottom-card strong {
+  margin-bottom: 6px;
+}
+
+.character-bottom-card .tag-list {
+  gap: 6px;
+}
+
+/* 作者・世界観の表示を小さめに */
+.character-detail-meta strong {
+  margin-bottom: 2px !important;
+  font-size: 11px !important;
+}
+
+.character-detail-meta p {
+  margin: 0;
+  font-size: 12px !important;
+  line-height: 1.4;
+}
+
+/* スマホでも横並びを維持 */
+@media (max-width: 400px) {
+  .character-bottom-profile {
+    grid-template-columns: 1.6fr 1fr;
+    gap: 12px;
+  }
+
+  .character-bottom-card {
+    padding: 8px;
+  }
+}
+
+/* ID・世界観・作者を均等に3列で表示 */
+.character-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.character-detail-grid > .character-detail-meta {
+  min-width: 0;
+  width: 100%;
+  margin: 0 !important;
+  padding: 10px 8px !important;
+  box-sizing: border-box;
+}
+
+.character-detail-grid > .character-detail-meta strong {
+  font-size: 11px !important;
+  margin-bottom: 4px !important;
+}
+
+.character-detail-grid > .character-detail-meta p {
+  margin: 0;
+  font-size: 12px !important;
+  overflow-wrap: anywhere;
+}
+
+/* 狭いスマホでも3列を維持 */
+@media (max-width: 400px) {
+  .character-detail-grid {
+    gap: 6px;
+  }
+
+  .character-detail-grid > .character-detail-meta {
+    padding: 8px 5px !important;
+  }
+}
+
+/* ===== キャラクター詳細画面の並びを整理 ===== */
+
+/* 全体は縦方向に並べる */
+.character-detail-grid {
+  display: flex !important;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ID・世界観・作者の3項目だけ横並び */
+.character-detail-grid > .character-detail-meta {
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+.character-detail-grid > .character-detail-meta:nth-child(1),
+.character-detail-grid > .character-detail-meta:nth-child(2),
+.character-detail-grid > .character-detail-meta:nth-child(3) {
+  flex: 1;
+}
+
+/* 3項目を横並びにするための専用行 */
+.character-detail-grid:has(> .character-detail-meta:nth-child(3)) {
+  display: flex !important;
+}
+
+/* 年齢などのチップは1段で横に並べ、折り返しも可能 */
+.character-profile-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+/* 紹介とステータスは横並び */
+.character-description-card,
+.character-radar-chart {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 一人称・二人称などは独立した縦のまとまり */
+.character-intro-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+}
+
+/* サンプルボイスは1段で横幅いっぱい */
+.character-sample-voice {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* タグとメインカラーは横並び */
+.character-bottom-profile {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) !important;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.character-bottom-card {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 紹介とステータスの横並び */
+.character-description-card,
+.character-radar-chart {
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .character-detail-grid {
+    gap: 10px;
+  }
+
+  .character-bottom-profile {
+    gap: 10px;
+  }
+}
+
+/* ステータスとプロフィール欄を横並びにする */
+.character-status-intro-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.character-status-intro-row > .character-radar-chart,
+.character-status-intro-row > .character-intro-details {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.character-status-intro-row > .character-radar-chart {
+  padding: 16px 8px;
+}
+
+.character-status-intro-row .character-speech-row {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+}
+
+.character-status-intro-row .character-info-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+.character-status-intro-row .character-radar-chart .recharts-responsive-container {
+  max-width: 100%;
+}
+/* レーダーチャートをポップに */
+.character-status-intro-row > .character-radar-chart {
+  background: linear-gradient(145deg, #fff0f7, #f2efff) !important;
+  border: 2px solid #ffc3df !important;
+  border-radius: 22px !important;
+  padding: 18px 8px 12px !important;
+  box-shadow: 0 5px 14px rgba(241, 73, 140, 0.10);
+  overflow: visible;
+}
+
+.character-status-intro-row > .character-radar-chart > strong {
+  display: block;
+  text-align: center;
+  color: #e83e86;
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.character-status-intro-row .recharts-wrapper,
+.character-status-intro-row .recharts-surface {
+  overflow: visible;
+}
+
+.character-status-intro-row .recharts-polar-angle-axis-tick text {
+  fill: #713d68;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.character-status-intro-row .recharts-polar-grid-angle line {
+  stroke: #e9c5df;
+}
+
+.character-status-intro-row .recharts-polar-grid-concentric path {
+  stroke: #dfc8ec;
+  fill: #f8eafa;
+  fill-opacity: 0.45;
+}
+
+.character-status-intro-row .recharts-radar-polygon {
+  stroke: #f1498c;
+  fill: #f1498c;
+  fill-opacity: 0.35;
+}
+
+/* レーダーチャート：紺・ピンク・ライム・白 */
+.character-status-intro-row > .character-radar-chart {
+  background: #ffffff !important;
+  border: 2px solid #f1498c !important;
+  border-radius: 18px !important;
+  padding: 16px 4px 10px !important;
+  box-shadow: 0 4px 0 rgba(15, 28, 54, 0.08);
+  overflow: visible;
+}
+
+/* 見出し */
+.character-status-intro-row > .character-radar-chart > strong {
+  display: block;
+  text-align: center;
+  color: #0f1c36;
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+/* 項目名 */
+.character-status-intro-row .recharts-polar-angle-axis-tick text {
+  fill: #0f1c36;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* レーダーの目盛り線 */
+.character-status-intro-row .recharts-polar-grid-concentric path {
+  stroke: #dce2ec;
+  fill: #ffffff;
+  fill-opacity: 1;
+}
+
+/* 中心から伸びる線 */
+.character-status-intro-row .recharts-polar-grid-angle line {
+  stroke: #c7cfdd;
+}
+
+/* 数値の目盛り */
+.character-status-intro-row .recharts-polar-radius-axis text {
+  fill: #0f1c36;
+  font-size: 10px;
+}
+
+/* ステータスの形：ピンク */
+.character-status-intro-row .recharts-radar-polygon {
+  stroke: #f1498c;
+  fill: #f1498c;
+  fill-opacity: 0.25;
+}
+
+/* 頂点：ライムグリーン */
+.character-status-intro-row .recharts-radar-dot {
+  fill: #adeb41;
+  stroke: #0f1c36;
+  stroke-width: 1.5px;
+}
+
+/* スマホでも文字を切らさない */
+.character-status-intro-row .recharts-wrapper,
+.character-status-intro-row .recharts-surface {
+  overflow: visible;
+}
+/* ステータス欄を右側のプロフィール欄と同じ高さに */
+.character-status-intro-row {
+  align-items: stretch;
+}
+
+.character-status-intro-row > .character-radar-chart {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.character-status-intro-row > .character-intro-details {
+  height: 100%;
+  min-height: 0;
+  align-self: stretch;
+}
+
+/* チャートの領域をカード内に収める */
+.character-status-intro-row > .character-radar-chart > .recharts-responsive-container {
+  flex: 1;
+  min-height: 0;
+}
+/* ステータス欄の高さを約3分の2に */
+.character-status-intro-row > .character-radar-chart {
+  height: auto !important;
+  min-height: 0 !important;
+  align-self: start !important;
+  padding-bottom: 8px !important;
+}
+
+/* チャートの高さを縮める */
+.character-status-intro-row
+  > .character-radar-chart
+  > .recharts-responsive-container {
+  flex: none !important;
+  height: 200px !important;
+  min-height: 0 !important;
+}
+
+/* プロフィール関連カードを白背景に統一 */
+.character-status-intro-row .character-info-card,
+.character-bottom-profile .character-bottom-card,
+.character-status-intro-row .character-radar-chart {
+  background: #ffffff !important;
+  border: 2px solid #f1498c !important;
+  color: #f1498c;
+  box-shadow: 0 3px 8px rgba(241, 73, 140, 0.08);
+}
+
+/* カードの見出しをピンクに */
+.character-status-intro-row .character-info-card strong,
+.character-bottom-profile .character-bottom-card strong {
+  color: #f1498c !important;
+}
+
+/* カード内の本文は読みやすい紺色に */
+.character-status-intro-row .character-info-card p,
+.character-bottom-profile .character-bottom-card p,
+.character-bottom-profile .character-main-color {
+  color: #0f1c36 !important;
+}
+
+/* タグはピンク背景＋白文字のまま */
+.character-bottom-profile .tag {
+  background: #f1498c;
+  color: #ffffff;
+  border: 1px solid #f1498c;
+}
+
+/* メインカラーの見本を見やすく */
+.character-bottom-profile .character-main-color-swatch {
+  border: 2px solid #f1498c;
+  border-radius: 8px;
+}
+
+/* 世界観・作者・IDを横並びにする */
+.character-detail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.character-detail-grid > .character-meta-row {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 3fr);
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+
+.character-detail-grid .character-meta-row .character-detail-meta {
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* メインカラー欄をタグ欄の約半分の幅に */
+.character-bottom-profile {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) !important;
+  gap: 12px;
+}
+
+.character-bottom-profile > .character-bottom-card {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* 小さい画面でも3項目を横並びに保つ */
+@media (max-width: 400px) {
+  .character-detail-grid > .character-meta-row {
+    gap: 5px;
+  }
+
+  .character-detail-grid .character-meta-row .character-detail-meta {
+    padding: 8px 5px !important;
+  }
+
+  .character-bottom-profile {
+    gap: 8px;
+  }
+}
+
+/* 上部の3項目を横並びにする */
+.character-detail-grid > .character-meta-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 3fr) !important;
+  gap: 10px !important;
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.character-detail-grid > .character-meta-row > .character-detail-meta {
+  width: 100% !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 10px 8px !important;
+  box-sizing: border-box;
+}
+
+/* 詳細欄同士の間隔を戻す */
+.character-detail-grid {
+  gap: 12px !important;
+}
+
+.character-detail-grid > .character-profile-chips {
+  margin: 0 0 8px !important;
+}
+
+/* ステータスとプロフィール欄の間隔 */
+.character-status-intro-row {
+  gap: 12px !important;
+}
+
+/* スマホでの余白 */
+@media (max-width: 400px) {
+  .character-detail-grid > .character-meta-row {
+    gap: 5px !important;
+  }
+
+  .character-detail-grid > .character-meta-row > .character-detail-meta {
+    padding: 8px 5px !important;
+  }
+}
+.character-meta-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 3fr) !important;
+  gap: 10px !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.character-meta-row > .character-detail-meta {
+  min-width: 0;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* ===== キャラクター詳細画面の余白を整える ===== */
+
+/* 各ブロックの間隔 */
+.character-detail-grid {
+  gap: 18px !important;
+}
+
+/* 世界観・作者・IDのカード同士 */
+.character-meta-row {
+  gap: 12px !important;
+  margin-bottom: 6px !important;
+}
+
+/* 年齢・性別・身長などのチップ */
+.character-profile-chips {
+  gap: 10px !important;
+  margin-bottom: 6px !important;
+}
+
+/* ステータスと一人称などのカード */
+.character-status-intro-row {
+  gap: 16px !important;
+  margin-top: 6px !important;
+  margin-bottom: 8px !important;
+}
+
+/* ステータスとプロフィールの内側の余白 */
+.character-status-intro-row > .character-radar-chart,
+.character-status-intro-row .character-info-card {
+  padding: 16px !important;
+}
+
+/* 一人称・二人称・好き・苦手のカード間隔 */
+.character-intro-details {
+  gap: 14px !important;
+}
+
+/* 一人称と二人称の間隔 */
+.character-speech-row {
+  gap: 12px !important;
+}
+
+/* タグとメインカラーのカード間隔 */
+.character-bottom-profile {
+  gap: 16px !important;
+  margin-top: 8px !important;
+  margin-bottom: 20px !important;
+}
+
+/* タグ・メインカラーの内側の余白 */
+.character-bottom-profile > .character-bottom-card {
+  padding: 16px !important;
+}
+
+/* サンプルボイスの上下に余白 */
+.character-sample-voice {
+  margin-top: 8px !important;
+  margin-bottom: 18px !important;
+  padding: 16px !important;
+}
+
+/* スマホでは間隔を少し控えめに */
+@media (max-width: 480px) {
+  .character-detail-grid {
+    gap: 14px !important;
+  }
+
+  .character-meta-row {
+    gap: 7px !important;
+  }
+
+  .character-status-intro-row {
+    gap: 10px !important;
+  }
+
+  .character-status-intro-row > .character-radar-chart,
+  .character-status-intro-row .character-info-card,
+  .character-bottom-profile > .character-bottom-card {
+    padding: 10px !important;
+  }
+
+  .character-bottom-profile {
+    gap: 10px !important;
+  }
+}
+
+/* タグとメインカラーをコンパクトにする */
+.character-bottom-profile {
+  grid-template-columns: minmax(0, 3fr) minmax(0, 1fr) !important;
+  gap: 12px !important;
+  align-items: start !important;
+}
+
+.character-bottom-profile > .character-bottom-card {
+  height: auto !important;
+  align-self: start !important;
+  min-width: 0;
+  padding: 8px 10px !important;
+  box-sizing: border-box;
+}
+
+/* 見出しとタグの間隔を縮める */
+.character-bottom-profile .character-bottom-card strong {
+  margin-bottom: 5px !important;
+}
+
+.character-bottom-profile .tag-list {
+  gap: 5px !important;
+  margin: 5px 0 !important;
+}
+
+/* メインカラーの見本を小さくする */
+.character-bottom-profile .character-main-color {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+.character-bottom-profile .character-main-color-swatch {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 400px) {
+  .character-bottom-profile {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .character-bottom-profile > .character-bottom-card {
+    padding: 7px !important;
+  }
+}
+
+/* タグとメインカラーのカードの高さをそろえる */
+.character-bottom-profile {
+  align-items: stretch !important;
+}
+
+.character-bottom-profile > .character-bottom-card {
+  height: auto !important;
+  align-self: stretch !important;
+  box-sizing: border-box;
+}
+
+/* サンプルボイスの背景を白に戻す */
+.character-sample-voice {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 2px solid #f1498c !important;
+  color: #0f1c36 !important;
+  box-shadow: none !important;
+}
+
+/* ステータス欄を右側の項目に合わせて中央配置 */
+.character-status-intro-row {
+  align-items: stretch !important;
+}
+
+.character-radar-chart {
+  align-self: stretch !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  min-height: 0;
+}
+
+/* ステータス見出しとチャートをまとめて中央寄せ */
+.character-radar-chart > strong {
+  margin-top: auto !important;
+  margin-bottom: 8px !important;
+}
+
+.character-radar-chart > .recharts-responsive-container {
+  margin-top: 0 !important;
+  margin-bottom: auto !important;
+  flex-shrink: 0;
+}
+
+/* ステータス欄を右側の項目に合わせて中央配置 */
+.character-status-intro-row {
+  align-items: stretch !important;
+}
+
+.character-radar-chart {
+  align-self: stretch !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  min-height: 0;
+}
+
+/* ステータス見出しとチャートをまとめて中央寄せ */
+.character-radar-chart > strong {
+  margin-top: auto !important;
+  margin-bottom: 8px !important;
+}
+
+.character-radar-chart > .recharts-responsive-container {
+  margin-top: 0 !important;
+  margin-bottom: auto !important;
+  flex-shrink: 0;
+}
+
+/* 左のステータス枠と右側の項目を同じ高さにする */
+.character-status-intro-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  align-items: stretch !important;
+}
+
+.character-status-intro-row > .character-radar-chart {
+  height: auto !important;
+  min-height: 0 !important;
+  align-self: stretch !important;
+  box-sizing: border-box !important;
+}
+
+/* ステータスの見出しを周りと同じピンクに */
+.character-radar-chart > strong {
+  color: #f1498c !important;
+}
+
+/* 登録画面のボタンをかわいく整える */
+.register-actions button {
+  border-radius: 999px !important;
+  padding: 13px 24px !important;
+  font-weight: 800 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease !important;
+}
+
+/* キャンセル：白背景にピンクの枠 */
+.register-cancel {
+  background: #ffffff !important;
+  color: #0f1c36 !important;
+  border: 2px solid #f1498c !important;
+}
+
+/* 保存：ピンク背景に白文字 */
+.register-submit {
+  background: #f1498c !important;
+  color: #ffffff !important;
+  border: 2px solid #f1498c !important;
+  box-shadow: 0 4px 0 #d83273 !important;
+}
+
+/* マウスを乗せたとき */
+.register-cancel:hover {
+  background: #fff0f6 !important;
+  transform: translateY(-2px);
+}
+
+.register-submit:hover {
+  background: #d83273 !important;
+  box-shadow: 0 6px 0 #b92760 !important;
+  transform: translateY(-2px);
+}
+
+/* 閉じるボタン：ライムグリーン */
+.register-close {
+  background: #adeb41 !important;
+  color: #0f1c36 !important;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.register-close:hover {
+  background: #c4f576 !important;
+  transform: rotate(8deg);
+}
+
+/* 登録画面の入力欄をかわいく整える */
+.register-form input:not([type="color"]),
+.register-form textarea {
+  border: 1.5px solid #f3b4cf !important;
+  border-radius: 14px !important;
+  background: #ffffff !important;
+  color: #0f1c36 !important;
+  transition: border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease !important;
+}
+
+/* 入力欄を選択したとき */
+.register-form input:not([type="color"]):focus,
+.register-form textarea:focus {
+  border-color: #f1498c !important;
+  outline: none !important;
+  background: #fffafd !important;
+  box-shadow: 0 0 0 3px rgba(241, 73, 140, 0.15) !important;
+}
+
+/* 入力前の案内文字 */
+.register-form input::placeholder,
+.register-form textarea::placeholder {
+  color: #a0a8b8;
+  opacity: 1;
+}
+
+/* 入力欄の見出し */
+.register-form label {
+  color: #0f1c36;
+}
+
+/* 入力欄の案内文 */
+.register-hint {
+  color: #737d90;
+}
+
+/* プロフィールテーマ：基本色 */
+.character-detail[data-profile-theme="pink"] {
+  --profile-accent: #f1498c;
+  --profile-accent-light: #fff0f6;
+  --profile-accent-contrast: #adeb41;
+}
+
+/* ミント */
+.character-detail[data-profile-theme="mint"] {
+  --profile-accent: #45b89c;
+  --profile-accent-light: #e9faf5;
+  --profile-accent-contrast: #b8edcf;
+}
+
+/* バターイエロー */
+.character-detail[data-profile-theme="yellow"] {
+  --profile-accent: #d5a51b;
+  --profile-accent-light: #fff8d9;
+  --profile-accent-contrast: #f4d77b;
+}
+
+/* スカイブルー */
+.character-detail[data-profile-theme="blue"] {
+  --profile-accent: #429cde;
+  --profile-accent-light: #eaf6ff;
+  --profile-accent-contrast: #a9e7ed;
+}
+
+/* ラベンダー */
+.character-detail[data-profile-theme="lavender"] {
+  --profile-accent: #9874d8;
+  --profile-accent-light: #f3edff;
+  --profile-accent-contrast: #d9c8ff;
+}
+
+/* プロフィール内のアクセントカラー */
+.character-detail .register-heading h2,
+.character-detail .character-radar-chart > strong {
+  color: var(--profile-accent) !important;
+}
+
+.character-detail .register-heading .eyebrow {
+  color: var(--profile-accent) !important;
+}
+
+.character-detail .character-sample-voice {
+  border-color: var(--profile-accent) !important;
+}
+
+.character-detail .character-chip {
+  border-color: var(--profile-accent) !important;
+  background-color: var(--profile-accent-light) !important;
+}
+
+.character-detail .character-tag {
+  border-color: var(--profile-accent) !important;
+}
+
+/* プロフィールテーマ選択エリア */
+.profile-theme-settings {
+  margin: 0 auto 32px;
+  padding: 22px;
+  max-width: 1000px;
+  background: #ffffff;
+  border: 2px solid #0f1c36;
+  border-radius: 22px;
+  box-sizing: border-box;
+}
+
+.profile-theme-settings h2 {
+  margin: 0 0 6px;
+  color: #0f1c36;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.profile-theme-settings p {
+  margin: 0 0 16px;
+  color: #737d90;
+  font-size: 14px;
+}
+
+.profile-theme-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.profile-theme-options button {
+  padding: 10px 16px;
+  border: 2px solid #0f1c36;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0f1c36;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-theme-options button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 #0f1c36;
+}
+
+.profile-theme-options button:nth-child(1) {
+  border-color: #f1498c;
+  background: #fff0f6;
+}
+
+.profile-theme-options button:nth-child(2) {
+  border-color: #45b89c;
+  background: #e9faf5;
+}
+
+.profile-theme-options button:nth-child(3) {
+  border-color: #d5a51b;
+  background: #fff8d9;
+}
+
+.profile-theme-options button:nth-child(4) {
+  border-color: #429cde;
+  background: #eaf6ff;
+}
+
+.profile-theme-options button:nth-child(5) {
+  border-color: #9874d8;
+  background: #f3edff;
+}
+
+@media (max-width: 600px) {
+  .profile-theme-settings {
+    margin: 0 16px 24px;
+    padding: 16px;
+  }
+
+  .profile-theme-options button {
+    flex: 1 1 calc(50% - 10px);
+    padding: 10px 8px;
+  }
+}
+
+/* ===== プロフィール全体のテーマカラー対応 ===== */
+
+/* プロフィール内の各情報カードの見出し */
+.character-detail .character-bottom-card > strong,
+.character-detail .character-bottom-card > h3,
+.character-detail .character-info-title {
+  color: var(--profile-accent) !important;
+}
+
+/* 年齢・性別・身長などのチップ */
+.character-detail .character-chip {
+  border-color: var(--profile-accent) !important;
+  background: var(--profile-accent-light) !important;
+}
+
+/* タグ */
+.character-detail .character-tag {
+  border-color: var(--profile-accent) !important;
+}
+
+/* メインカラー欄などのラベル */
+.character-detail .character-main-color strong,
+.character-detail .character-tags strong {
+  color: var(--profile-accent) !important;
+}
+
+/* プロフィール内のアクセント枠 */
+.character-detail .character-bottom-card,
+.character-detail .character-radar-chart {
+  border-color: var(--profile-accent) !important;
+}
+
+/* 閉じるボタン */
+.character-detail .register-close {
+  background: var(--profile-accent-contrast) !important;
+  border-color: var(--profile-accent) !important;
+  color: #0f1c36 !important;
+}
+
+/* 閉じるボタンにマウスを乗せたとき */
+.character-detail .register-close:hover {
+  filter: brightness(1.04);
+}
+
+/* ===== プロフィール背景のテーマ対応 ===== */
+
+/* プロフィール全体 */
+.character-detail {
+  border-color: var(--profile-accent) !important;
+}
+
+/* レーダーチャートの背景 */
+.character-detail .character-radar-chart {
+  background: var(--profile-accent-light) !important;
+  border-color: var(--profile-accent) !important;
+}
+
+/* 紹介文・プロフィール項目カード */
+.character-detail .character-detail-grid > div {
+  background: var(--profile-accent-light) !important;
+  border-color: var(--profile-accent) !important;
+  box-shadow: none !important;
+}
+
+/* 年齢・性別・身長などのメタ情報カード */
+.character-detail .character-detail-meta {
+  background: var(--profile-accent-light) !important;
+  border-color: var(--profile-accent) !important;
+}
+
+/* プロフィール内の情報カードの見出し */
+.character-detail .character-detail-grid > div > strong {
+  color: var(--profile-accent) !important;
+}
+
+/* プロフィール内の画像枠 */
+.character-detail .character-detail-images img {
+  border-color: var(--profile-accent) !important;
+}
+
+/* ===== プロフィール内のピンク固定色をテーマに統一 ===== */
+
+/* プロフィール紹介カード */
+.character-detail .character-detail-grid > div {
+  border-color: var(--profile-accent) !important;
+}
+
+/* 一人称・二人称・好きなもの・苦手なものなど */
+.character-detail .character-bottom-card {
+  border-color: var(--profile-accent) !important;
+}
+
+/* 各項目の見出し */
+.character-detail .character-bottom-card strong,
+.character-detail .character-detail-grid strong {
+  color: var(--profile-accent) !important;
+}
+
+/* サンプルボイス */
+.character-detail .character-sample-voice {
+  border-color: var(--profile-accent) !important;
+}
+
+/* プロフィール内のタグ */
+.character-detail .character-tag {
+  border-color: var(--profile-accent) !important;
+}
+
+/* プロフィール上部の情報欄 */
+.character-detail .character-detail-meta {
+  background: var(--profile-accent-light) !important;
+  border-color: var(--profile-accent) !important;
+}
+
+/* ===== プロフィール内の残った色をテーマに統一 ===== */
+
+/* キャラクター紹介の枠 */
+.character-detail .character-intro,
+.character-detail .character-introduction,
+.character-detail .character-detail-grid > div:first-child {
+  border-color: var(--profile-accent) !important;
+}
+
+/* 一人称・二人称・好きなもの・苦手なもの */
+.character-detail .character-bottom-card {
+  border-color: var(--profile-accent) !important;
+}
+
+.character-detail .character-bottom-card strong,
+.character-detail .character-bottom-card h3 {
+  color: var(--profile-accent) !important;
+}
+
+/* 上部の年齢・性別・身長などのチップ */
+.character-detail .character-chip {
+  background: var(--profile-accent) !important;
+  border-color: var(--profile-accent) !important;
+  color: #ffffff !important;
+}
+
+/* プロフィールの区切り線 */
+.character-detail hr {
+  border-color: var(--profile-accent-light) !important;
+}
+
+/* プロフィール画像の枠 */
+.character-detail .character-detail-images img {
+  border-color: var(--profile-accent) !important;
+}
+
+/* 一人称・二人称・好きなもの・苦手なもののテーマ対応 */
+.character-detail .character-info-card {
+  border: 2px solid var(--profile-accent) !important;
+  background: var(--profile-accent-light) !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+}
+
+/* 情報カードの見出し */
+.character-detail .character-info-card > strong {
+  color: var(--profile-accent) !important;
+}
+
+/* 情報カードの本文 */
+.character-detail .character-info-card > p {
+  color: #0f1c36 !important;
+}
+
+/* 年齢・性別・身長・所属・種族のチップ */
+.character-detail .character-profile-chip {
+  background: var(--profile-accent-light) !important;
+  border: 1.5px solid var(--profile-accent) !important;
+  color: #0f1c36 !important;
+}
+
+/* キャラクター紹介カード */
+.character-detail .character-description-card {
+  background: var(--profile-accent-light) !important;
+  border: 2px solid var(--profile-accent) !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+}
+
+/* キャラクター紹介の見出し */
+.character-detail .character-section-heading {
+  color: var(--profile-accent) !important;
+}
+
+.character-detail .character-section-heading strong {
+  color: var(--profile-accent) !important;
+}
+
+/* キャラクター紹介のアイコン */
+.character-detail .character-section-icon {
+  color: var(--profile-accent) !important;
+}
+
+/* キャラクター紹介内の画像区切り線 */
+.character-detail .character-description-divider {
+  border-color: var(--profile-accent) !important;
+}
+
+/* ===== プロフィール画面の操作ボタン ===== */
+
+/* 3つのボタンの共通設定 */
+.character-detail .register-actions button {
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease !important;
+}
+
+/* 一覧に戻る・削除する */
+.character-detail .register-actions .register-cancel {
+  background: var(--profile-accent-light) !important;
+  color: #0f1c36 !important;
+  border: 2px solid var(--profile-accent) !important;
+  box-shadow: none !important;
+}
+
+/* 編集する */
+.character-detail .register-actions .register-submit {
+  background: var(--profile-accent) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--profile-accent) !important;
+  box-shadow: none !important;
+}
+
+/* マウスを乗せたとき */
+.character-detail .register-actions .register-cancel:hover {
+  background: var(--profile-accent-contrast) !important;
+  transform: translateY(-2px);
+}
+
+.character-detail .register-actions .register-submit:hover {
+  filter: brightness(0.94);
+  transform: translateY(-2px);
+}
+
+/* 登録したタグをテーマカラーに統一 */
+.character-detail .character-tag {
+  background: var(--profile-accent-light) !important;
+  border: 1.5px solid var(--profile-accent) !important;
+  color: var(--profile-accent) !important;
+  box-shadow: none !important;
+}
+
+/* キャラクター紹介の「✧」アイコン */
+.character-detail .character-section-icon {
+  color: var(--profile-accent) !important;
+  background: var(--profile-accent-light) !important;
+  border-color: var(--profile-accent) !important;
+}
+
+/* キャラクター紹介の「✧」：白い四角を復活 */
+.character-detail .character-section-icon {
+  background: #ffffff !important;
+  color: var(--profile-accent) !important;
+  border: 2px solid var(--profile-accent) !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+/* プロフィール内の #タグ名 をテーマカラーに統一 */
+.character-detail .tag-list .tag {
+  background: var(--profile-accent-light) !important;
+  border: 2px solid var(--profile-accent) !important;
+  color: var(--profile-accent) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+/* ヘッダーのボタンをゆったり配置 */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 控えめでかわいいカラー設定ボタン */
+.theme-color-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 12px;
+  border: 2px solid #f4c4d8;
+  border-radius: 12px;
+  background: #fff5f9;
+  color: #d83d7c;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.theme-color-toggle:hover {
+  background: #ffe8f1;
+  transform: translateY(-1px);
+}
+
+/* カラー設定の小さなポップアップ */
+.theme-menu-wrap {
+  position: relative;
+}
+
+.header-actions {
+  gap: 12px;
+}
+
+.profile-theme-settings {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 100;
+  width: 220px;
+  box-sizing: border-box;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  background: #ffffff;
+  border: 2px solid #f3c7d9;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 28, 54, 0.12);
+}
+
+.profile-theme-settings label {
+  color: #0f1c36;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.profile-theme-settings select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 10px;
+  border: 2px solid #f0c4d6;
+  border-radius: 9px;
+  background: #fff7fa;
+  color: #0f1c36;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* カラー選択プルダウンをピンクに統一 */
+.profile-theme-settings select {
+  background-color: #f1498c;
+  color: #ffffff;
+  border: 1px solid #f1498c;
+}
+
+/* プルダウンの選択肢 */
+.profile-theme-settings select option {
+  background-color: #ffffff;
+  color: #f1498c;
+}
+
+/* ライト・ダーク切り替えボタン */
+.color-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid #eadde5;
+  border-radius: 12px;
+  background: #fff5f9;
+}
+
+.color-mode-toggle button {
+  padding: 7px 9px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: #0f1c36;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.color-mode-toggle button.active {
+  background: #f1498c;
+  color: #ffffff;
+}
+
+.color-mode-toggle button:hover {
+  opacity: 0.85;
+}
+
+/* =========================
+   ダークモード
+========================= */
+
+.app-shell.dark-mode {
+  background: #11131b;
+  color: #f4f2f7;
+  min-height: 100vh;
+}
+
+.dark-mode .topbar {
+  background: #191c27;
+  border-color: #303343;
+}
+
+.dark-mode .brand,
+.dark-mode .brand strong,
+.dark-mode .brand small,
+.dark-mode .nav-link {
+  color: #f4f2f7;
+}
+
+.dark-mode .welcome-section,
+.dark-mode .library-section {
+  color: #f4f2f7;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p {
+  color: inherit;
+}
+
+.dark-mode .character-card,
+.dark-mode .art-card,
+.dark-mode .search-box {
+  background: #1c202d;
+  border-color: #34384b;
+  color: #f4f2f7;
+}
+
+.dark-mode .character-card *,
+.dark-mode .search-box input {
+  color: inherit;
+}
+
+.dark-mode .search-box input {
+  background: transparent;
+}
+
+.dark-mode .search-box input::placeholder {
+  color: #a5a9ba;
+}
+
+.dark-mode .filter-chip {
+  background: #242838;
+  border-color: #3b4055;
+  color: #f4f2f7;
+}
+
+.dark-mode .filter-chip.selected {
+  background: #f1498c;
+  border-color: #f1498c;
+  color: #ffffff;
+}
+
+.dark-mode .profile-theme-settings {
+  background: #1c202d;
+  border-color: #484052;
+}
+
+.dark-mode .profile-theme-settings label {
+  color: #ffffff;
+}
+
+/* ダークモード：文字の視認性を改善 */
+.app-shell.dark-mode {
+  background: #11131b;
+  color: #f4f2f7;
+}
+
+.dark-mode .welcome-copy h1,
+.dark-mode .welcome-copy p,
+.dark-mode .section-heading h2,
+.dark-mode .section-heading p,
+.dark-mode .result-note,
+.dark-mode .eyebrow {
+  color: #f4f2f7 !important;
+}
+
+.dark-mode .welcome-copy .eyebrow {
+  color: #f7a4c8 !important;
+}
+
+.dark-mode .character-card {
+  background: #1c202d;
+  border-color: #34384b;
+  color: #f4f2f7;
+}
+
+.dark-mode .character-card h3,
+.dark-mode .character-card p,
+.dark-mode .character-card strong,
+.dark-mode .character-card span {
+  color: #f4f2f7;
+}
+
+/* キャラクターカード上部の画像エリアは、暗めの色に */
+.dark-mode .character-art {
+  background: #272b3a !important;
+}
+
+/* カードのタグを読みやすく */
+.dark-mode .character-card .tag,
+.dark-mode .character-card .character-tag {
+  background: #353044;
+  border-color: #f1498c;
+  color: #ffb4d3;
+}
+
+/* 検索欄とフィルター */
+.dark-mode .search-box {
+  background: #1c202d;
+  border-color: #3b4055;
+}
+
+.dark-mode .search-box input {
+  color: #ffffff;
+}
+
+.dark-mode .filter-chip {
+  color: #f4f2f7;
+}
+
+/* ダークモードでもピンクのアクセントを維持 */
+.dark-mode .section-kicker {
+  color: #ff78b0;
+}
+
+/* ダークモード：ホームの紹介エリア */
+.app-shell.dark-mode .welcome-section {
+  background: #1c202d !important;
+  color: #f4f2f7 !important;
+  border: 1px solid #34384b;
+}
+
+.app-shell.dark-mode .welcome-section .welcome-copy h1 {
+  color: #f4f2f7 !important;
+}
+
+.app-shell.dark-mode .welcome-section .welcome-copy h1 span {
+  color: #f1498c !important;
+}
+
+.app-shell.dark-mode .welcome-section .welcome-copy p {
+  color: #d0d3e0 !important;
+}
+
+.app-shell.dark-mode .welcome-section .eyebrow {
+  color: #ff9bc4 !important;
+}
+
+.app-shell.dark-mode .welcome-section .private-note {
+  color: #d0d3e0 !important;
+}
+
+.app-shell.dark-mode .welcome-section .art-orbit {
+  border-color: #454b60;
+}
+
+/* ダークモード：上部ナビゲーション */
+.app-shell.dark-mode .top-nav .nav-link {
+  color: #e8eaf3 !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+.app-shell.dark-mode .top-nav .nav-link.active {
+  color: #ffffff !important;
+  background: #f1498c !important;
+  border-color: #f1498c !important;
+}
+
+.app-shell.dark-mode .top-nav .nav-link:hover {
+  background: #292d3d !important;
+  color: #ffffff !important;
+}
+
+/* ヘッダー内の切り替えボタン */
+.app-shell.dark-mode .color-mode-toggle {
+  background: #242838;
+  border-color: #42475b;
+}
+
+.app-shell.dark-mode .color-mode-toggle button {
+  color: #e8eaf3;
+}
+
+.app-shell.dark-mode .color-mode-toggle button.active {
+  background: #f1498c;
+  color: #ffffff;
+}
+
+/* ダークモード：世界観の紹介エリア */
+.app-shell.dark-mode .coming-section {
+  background: #1c202d !important;
+  border: 1px solid #34384b !important;
+  color: #f4f2f7 !important;
+}
+
+.app-shell.dark-mode .coming-section h2 {
+  color: #ffffff !important;
+}
+
+.app-shell.dark-mode .coming-section p {
+  color: #d0d3e0 !important;
+  opacity: 1 !important;
+}
+
+.app-shell.dark-mode .coming-section .section-kicker {
+  color: #ff78b0 !important;
+}
+
+.app-shell.dark-mode .coming-section .coming-icon {
+  background: #30243a !important;
+  color: #ff78b0 !important;
+  border-color: #59405c !important;
+}
+
+/* ダークモード：フッター */
+.app-shell.dark-mode .footer {
+  background: #11131b;
+  border-color: #303343;
+  color: #c7cad8;
+}
+
+.app-shell.dark-mode .footer span {
+  color: #c7cad8;
+}
+
+/* ヘッダーの設定ボタン同士に余白をつける */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px !important;
+}
+
+/* カラー設定とモード切り替えを中央揃え */
+.theme-menu-wrap,
+.color-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ライト・ダーク切り替えを中央に整える */
+.color-mode-toggle {
+  align-self: center;
+  margin: 0 4px;
+}
+
+/* ボタンの高さを揃える */
+.theme-color-toggle,
+.color-mode-toggle button {
+  box-sizing: border-box;
+  min-height: 36px;
+}
+
+/* カラー設定ボタンの中身も中央揃え */
+.theme-color-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ダークモードでもライムグリーンを維持 */
+.app-shell.dark-mode .welcome-section .art-card.card-back {
+  background: #adeb41 !important;
+  color: #0f1c36 !important;
+}
+
+.app-shell.dark-mode .welcome-section .art-card.card-back svg,
+.app-shell.dark-mode .welcome-section .art-card.card-back span {
+  color: #0f1c36 !important;
+}
+
+/* イラスト内のライム色のアクセント */
+.app-shell.dark-mode .welcome-section .art-tags i:nth-child(2) {
+  background: #adeb41 !important;
+}
+
+/* MY OCs のハートもライム色に */
+.app-shell.dark-mode .welcome-section .art-sticker span {
+  color: #adeb41 !important;
+}
+
+/* ダークモード：キャラクタープロフィール */
+.app-shell.dark-mode .character-detail {
+  background: #1c202d !important;
+  color: #f4f2f7 !important;
+  border-color: #3b4055 !important;
+}
+
+/* プロフィール内の見出し・説明文 */
+.app-shell.dark-mode .character-detail h2,
+.app-shell.dark-mode .character-detail h3,
+.app-shell.dark-mode .character-detail p,
+.app-shell.dark-mode .character-detail strong,
+.app-shell.dark-mode .character-detail label {
+  color: #f4f2f7;
+}
+
+/* プロフィール内のカード */
+.app-shell.dark-mode .character-detail .character-bottom-card,
+.app-shell.dark-mode .character-detail .character-radar-chart,
+.app-shell.dark-mode .character-detail .character-info-card,
+.app-shell.dark-mode .character-detail .character-description-card,
+.app-shell.dark-mode .character-detail .character-detail-grid > div,
+.app-shell.dark-mode .character-detail .character-detail-meta {
+  background: #252a3a !important;
+  color: #f4f2f7 !important;
+  border-color: #42485e !important;
+  box-shadow: none;
+}
+
+/* プロフィールの入力欄 */
+.app-shell.dark-mode .character-detail input,
+.app-shell.dark-mode .character-detail textarea,
+.app-shell.dark-mode .character-detail select {
+  background: #171a25;
+  color: #ffffff;
+  border-color: #484e64;
+}
+
+/* プロフィール内のタグ */
+.app-shell.dark-mode .character-detail .tag-list .tag {
+  background: #30243a !important;
+  color: var(--profile-accent-contrast) !important;
+  border-color: var(--profile-accent) !important;
+}
+
+/* 閉じるボタン */
+.app-shell.dark-mode .character-detail .register-close {
+  background: #252a3a;
+  color: #ffffff;
+  border-color: var(--profile-accent);
+}
+
+/* ダークモード：プロフィールの残りの白い部分を調整 */
+.app-shell.dark-mode .character-detail .register-heading,
+.app-shell.dark-mode .character-detail .character-detail-meta,
+.app-shell.dark-mode .character-detail .character-detail-grid,
+.app-shell.dark-mode .character-detail .character-detail-images {
+  background: #1c202d !important;
+  color: #f4f2f7 !important;
+  border-color: #42485e !important;
+}
+
+/* プロフィール上部の名前・世界観 */
+.app-shell.dark-mode .character-detail .register-heading > div {
+  background: #252a3a !important;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.app-shell.dark-mode .character-detail .register-heading h2 {
+  color: var(--profile-accent) !important;
+}
+
+.app-shell.dark-mode .character-detail .register-heading p {
+  color: #e1e4ef !important;
+}
+
+/* 年齢・性別などのタグ */
+.app-shell.dark-mode .character-detail .character-chip {
+  background: #30243a !important;
+  color: #ffffff !important;
+  border-color: var(--profile-accent) !important;
+}
+
+/* 一人称・二人称・好きなものなど */
+.app-shell.dark-mode .character-detail .character-bottom-card {
+  background: #252a3a !important;
+  color: #f4f2f7 !important;
+}
+
+.app-shell.dark-mode .character-detail .character-bottom-card strong {
+  color: var(--profile-accent) !important;
+}
+
+.app-shell.dark-mode .character-detail .character-bottom-card p,
+.app-shell.dark-mode .character-detail .character-bottom-card span {
+  color: #e1e4ef !important;
+}
+
+/* ステータスチャート周辺の文字 */
+.app-shell.dark-mode .character-detail .character-radar-chart {
+  color: #f4f2f7 !important;
+}
+
+.app-shell.dark-mode .character-detail .character-radar-chart text {
+  fill: #e1e4ef !important;
+}
+
+/* プロフィールの区切り線 */
+.app-shell.dark-mode .character-detail hr {
+  border-color: #555b70 !important;
+}
+
+/* ダークモード：プロフィール内の内容を読みやすく */
+.app-shell.dark-mode .character-detail .character-bottom-card,
+.app-shell.dark-mode .character-detail .character-bottom-card p,
+.app-shell.dark-mode .character-detail .character-bottom-card span,
+.app-shell.dark-mode .character-detail .character-info-card,
+.app-shell.dark-mode .character-detail .character-info-card p,
+.app-shell.dark-mode .character-detail .character-description-card,
+.app-shell.dark-mode .character-detail .character-description-card p {
+  color: #f4f2f7 !important;
+}
+
+/* 一人称・二人称・好きなものなどの本文 */
+.app-shell.dark-mode .character-detail .character-bottom-card > div,
+.app-shell.dark-mode .character-detail .character-bottom-card > span {
+  color: #e1e4ef !important;
+}
+
+/* 年齢・性別などのチップ */
+.app-shell.dark-mode .character-detail .character-chip {
+  background: #30243a !important;
+  color: #ffffff !important;
+  border-color: var(--profile-accent) !important;
+}
+
+/* サンプルボイス */
+.app-shell.dark-mode .character-detail .character-sample-voice,
+.app-shell.dark-mode .character-detail .character-sample-voice p {
+  background: #252a3a !important;
+  color: #f4f2f7 !important;
+  border-color: #42485e !important;
+}
+
+/* ステータス名の文字 */
+.app-shell.dark-mode .character-detail .character-radar-chart text {
+  fill: #f4f2f7 !important;
+}
+
+/* ダークモード：プロフィール内に残った白い背景を暗くする */
+.app-shell.dark-mode .character-detail .register-heading,
+.app-shell.dark-mode .character-detail .register-heading > div,
+.app-shell.dark-mode .character-detail .character-detail-grid,
+.app-shell.dark-mode .character-detail .character-detail-meta,
+.app-shell.dark-mode .character-detail .character-detail-images,
+.app-shell.dark-mode .character-detail .character-info-card,
+.app-shell.dark-mode .character-detail .character-description-card,
+.app-shell.dark-mode .character-detail .character-bottom-card,
+.app-shell.dark-mode .character-detail .character-radar-chart {
+  background-color: #252a3a !important;
+  color: #f4f2f7 !important;
+  border-color: #42485e !important;
+}
+
+/* プロフィール画像の周囲に残る明るい背景 */
+.app-shell.dark-mode .character-detail .character-detail-images > div {
+  background-color: #252a3a !important;
+}
+
+/* プロフィール内の画像はそのまま表示 */
+.app-shell.dark-mode .character-detail img {
+  object-fit: contain;
+}
+
+/* 閉じるボタン */
+.app-shell.dark-mode .character-detail .register-close {
+  background: #30243a !important;
+  color: #ffffff !important;
+  border-color: var(--profile-accent) !important;
+}
+
+/* ダークモード：プロフィール全体の白い余白を暗くする */
+.app-shell.dark-mode .character-detail {
+  background-color: #1c202d !important;
+  color: #f4f2f7 !important;
+}
+
+/* プロフィール内のレイアウト領域 */
+.app-shell.dark-mode .character-detail .character-bottom-profile,
+.app-shell.dark-mode .character-detail .character-detail-grid,
+.app-shell.dark-mode .character-detail .character-detail-meta,
+.app-shell.dark-mode .character-detail .character-detail-images {
+  background-color: #1c202d !important;
+}
+
+/* カードの間にある余白や囲い */
+.app-shell.dark-mode .character-detail .character-bottom-profile > *,
+.app-shell.dark-mode .character-detail .character-detail-grid > *,
+.app-shell.dark-mode .character-detail .character-detail-meta > * {
+  background-color: #252a3a;
+}
+
+/* 画像の周囲の余白は暗く、画像そのものは変更しない */
+.app-shell.dark-mode .character-detail img {
+  background-color: transparent;
+}
+
+/* ダークモード：プロフィールの外側・余白・操作エリア */
+.app-shell.dark-mode .character-detail,
+.app-shell.dark-mode .character-detail form,
+.app-shell.dark-mode .character-detail .register-form,
+.app-shell.dark-mode .character-detail .character-bottom-profile,
+.app-shell.dark-mode .character-detail .register-actions,
+.app-shell.dark-mode .character-detail .register-actions > *,
+.app-shell.dark-mode .character-detail .register-heading + div {
+  background-color: #1c202d !important;
+  color: #f4f2f7 !important;
+  border-color: #42485e !important;
+}
+
+/* プロフィール内のカード間に見える白い部分 */
+.app-shell.dark-mode .character-detail .character-bottom-profile,
+.app-shell.dark-mode .character-detail .character-detail-grid {
+  background: #1c202d !important;
+}
+
+/* 下部の操作ボタンエリア */
+.app-shell.dark-mode .character-detail .register-actions .register-cancel {
+  background: #252a3a !important;
+  color: #f4f2f7 !important;
+  border-color: var(--profile-accent) !important;
+}
+
+.app-shell.dark-mode .character-detail .register-actions .register-submit {
+  background: var(--profile-accent) !important;
+  color: #ffffff !important;
+}
+
+/* 年齢・性別・身長などのタグ全体を中央揃え */
+.character-detail .character-profile-chips {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 各タグの文字と内容を中央揃え */
+.character-detail .character-profile-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  box-sizing: border-box;
+}
+
+/* 年齢・性別・身長・所属・種族のタグを統一 */
+.character-detail .character-profile-chip {
+  background: #252a3a !important;
+  color: #ffffff !important;
+  border: 1px solid #42485e !important;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* タグ内の文字も白色に */
+.character-detail .character-profile-chip * {
+  color: #ffffff !important;
+}
+
+/* ダークモードでも同じ配色を維持 */
+.app-shell.dark-mode .character-detail .character-profile-chip {
+  background: #252a3a !important;
+  color: #ffffff !important;
+  border-color: #42485e !important;
+}
+
+/* 基本情報タグをテーマカラーに合わせる */
+.character-detail .character-profile-chip {
+  background: var(--profile-accent) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--profile-accent) !important;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* タグ内の文字も白色に */
+.character-detail .character-profile-chip * {
+  color: #ffffff !important;
+}
+
+/* ダークモード：基本情報タグの色を調整 */
+.app-shell.dark-mode .character-detail .character-profile-chip {
+  background: var(--profile-accent) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--profile-accent) !important;
+  box-shadow: none !important;
+}
+
+.app-shell.dark-mode .character-detail .character-profile-chip * {
+  color: #ffffff !important;
+}
+
+/* ダークモード：ハッシュタグの色を調整 */
+.app-shell.dark-mode .character-detail .character-tag,
+.app-shell.dark-mode .character-detail .character-hashtag,
+.app-shell.dark-mode .character-detail .tag-chip {
+  background: var(--profile-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--profile-accent) !important;
+}
+
+.app-shell.dark-mode .character-detail .character-tag *,
+.app-shell.dark-mode .character-detail .character-hashtag *,
+.app-shell.dark-mode .character-detail .tag-chip * {
+  color: #ffffff !important;
+}
+
+/* キャラクター詳細のタグ：テーマカラーに合わせる */
+.character-detail .character-bottom-card .tag-list .tag {
+  background: var(--profile-accent) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--profile-accent) !important;
+}
+
+/* タグ内の文字も白にする */
+.character-detail .character-bottom-card .tag-list .tag * {
+  color: #ffffff !important;
+}
+
+/* ダークモードでも同じ色にする */
+.app-shell.dark-mode .character-detail .character-bottom-card .tag-list .tag {
+  background: var(--profile-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--profile-accent) !important;
+}
+
+/* ダークモード：キャラクターカードの世界観ラベル */
+.app-shell.dark-mode .character-card .character-world,
+.app-shell.dark-mode .character-card .worldview,
+.app-shell.dark-mode .character-card .character-category {
+  color: #ffffff !important;
+  background-color: #252a3a !important;
+}
+
+/* スマホ専用：キャラクター詳細の調整 */
+@media (max-width: 600px) {
+  .character-detail .character-profile-chips {
+    gap: 6px !important;
+    justify-content: center !important;
+  }
+
+  .character-detail .character-profile-chip {
+    max-width: 48%;
+    padding: 7px 10px !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    text-align: center !important;
+  }
+}
+
+/* スマホ専用：ステータス欄を見やすくする */
+@media (max-width: 600px) {
+  .character-detail .character-status,
+  .character-detail .status-card {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .character-detail .character-status svg,
+  .character-detail .status-card svg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* スマホ専用：キャラクター詳細の基本情報とステータス */
+@media screen and (max-width: 600px) {
+  /* 基本情報タグをコンパクトにする */
+  .character-detail .character-profile-chips {
+    gap: 6px !important;
+  }
+
+  .character-detail .character-profile-chip {
+    max-width: 48% !important;
+    padding: 6px 8px !important;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* ステータス欄を広く使う */
+  .character-detail .character-status-intro-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .character-detail .character-radar-chart {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .character-detail .character-radar-chart .recharts-responsive-container {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+/* ===== 世界観一覧：カードデザイン ===== */
+
+.worlds-section {
+  margin: 48px 0 64px;
+  padding: 32px;
+  border: 1px solid #f2e3e9;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #fffafc, #fffdf8);
+}
+
+.world-section-heading {
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.world-section-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.world-section-heading h2 span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: #adeb41;
+  color: #0f1c36;
+  font-size: 13px;
+}
+
+.world-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.world-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #f0e4e9;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 28, 54, 0.045);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.world-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(15, 28, 54, 0.09);
+}
+
+.world-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.world-card-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 15px;
+  color: #f1498c;
+  background: #fff0f6;
+}
+
+.world-character-count {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #f3f8e9;
+  color: #42551c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.world-card h3 {
+  margin: 0 0 12px;
+  color: #0f1c36;
+  font-size: 20px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.world-card-description {
+  margin: 0 0 16px;
+  color: #687186;
+  font-size: 14px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.world-card-meta {
+  padding: 12px 0;
+  border-top: 1px solid #f1e8ec;
+  border-bottom: 1px solid #f1e8ec;
+  color: #788196;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.world-term-list,
+.world-linked-characters {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.world-term-list > strong,
+.world-linked-characters > strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #0f1c36;
+}
+
+.world-term-item {
+  margin-top: 8px;
+  padding: 12px 14px;
+  border-radius: 13px;
+  background: #fff7fa;
+}
+
+.world-term-item b {
+  color: #b72e68;
+}
+
+.world-term-item p,
+.world-linked-characters p {
+  margin: 6px 0 0;
+  color: #687186;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.world-linked-characters p {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f7f8fb;
+}
+
+.world-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid #f1e8ec;
+}
+
+.world-small-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 38px;
+  padding: 8px 15px;
+  border: 1px solid #f2c9da;
+  border-radius: 11px;
+  background: #fff5f9;
+  color: #a92e63;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.world-small-button:hover {
+  background: #ffe7f0;
+  transform: translateY(-1px);
+}
+
+.world-small-button.danger {
+  border-color: #f0d1d1;
+  background: #fff8f8;
+  color: #a64040;
+}
+
+.world-small-button.danger:hover {
+  background: #ffebeb;
+}
+
+.world-empty-state {
+  padding: 48px 20px;
+  border: 1px dashed #e8c9d7;
+  border-radius: 22px;
+  background: #ffffff;
+  color: #788196;
+  text-align: center;
+}
+
+.world-empty-state h3 {
+  color: #0f1c36;
+}
+
+.world-form-card {
+  margin-bottom: 26px;
+  padding: 28px;
+  border: 1px solid #f0dce5;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 12px 36px rgba(15, 28, 54, 0.07);
+}
+
+.world-field {
+  display: block;
+  margin-top: 20px;
+  color: #0f1c36;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.world-field input:not([type="checkbox"]),
+.world-field textarea,
+.world-term-editor input,
+.world-term-editor textarea {
+  width: 100%;
+  margin-top: 9px;
+  padding: 12px 14px;
+  border: 1px solid #e8dfe5;
+  border-radius: 12px;
+  background: #fffdfd;
+  color: #0f1c36;
+  font-size: 14px;
+}
+
+.world-field textarea,
+.world-term-editor textarea {
+  resize: vertical;
+  line-height: 1.8;
+}
+
+.world-subheading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.world-muted {
+  color: #788196;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.world-term-editor {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid #f1e3e9;
+  border-radius: 15px;
+  background: #fffafd;
+}
+
+.world-term-editor input,
+.world-term-editor textarea {
+  margin-top: 0;
+}
+
+.world-remove-button {
+  justify-self: start;
+  padding: 7px 12px;
+  border: 1px solid #f0d1d1;
+  border-radius: 9px;
+  background: #fff8f8;
+  color: #a64040;
+  font-size: 12px;
+}
+
+.world-character-picker {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.world-character-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 5px 10px;
+  padding: 12px;
+  border: 1px solid #eee4e9;
+  border-radius: 13px;
+  background: #fffdfd;
+  cursor: pointer;
+}
+
+.world-character-option:has(input:checked) {
+  border-color: #f1498c;
+  background: #fff2f7;
+}
+
+.world-character-option input {
+  grid-row: span 2;
+  accent-color: #f1498c;
+}
+
+.world-character-option span {
+  color: #0f1c36;
+  font-size: 13px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.world-character-option small {
+  color: #788196;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+  .worlds-section {
+    margin: 32px 0 44px;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .world-section-heading {
+    align-items: stretch;
+  }
+
+  .world-section-heading > .add-button {
+    align-self: flex-start;
+  }
+
+  .world-card-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .world-card {
+    padding: 19px;
+    border-radius: 18px;
+  }
+
+  .world-card h3 {
+    font-size: 18px;
+  }
+
+  .world-form-card {
+    padding: 19px;
+    border-radius: 18px;
+  }
+
+  .world-character-picker {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== 世界観機能：正しいダークモード対応 ===== */
+
+.app-shell.dark-mode .worlds-section,
+.app-shell.dark-mode .world-card,
+.app-shell.dark-mode .world-empty-state,
+.app-shell.dark-mode .world-form-card {
+  background: #1c2030;
+  border-color: #393448;
+  color: #e8e8f0;
+}
+
+.app-shell.dark-mode .world-card h3,
+.app-shell.dark-mode .world-section-heading h2,
+.app-shell.dark-mode .world-term-list > strong,
+.app-shell.dark-mode .world-linked-characters > strong,
+.app-shell.dark-mode .world-field,
+.app-shell.dark-mode .world-character-option span,
+.app-shell.dark-mode .world-empty-state h3 {
+  color: #f2edf7;
+}
+
+.app-shell.dark-mode .world-card-description,
+.app-shell.dark-mode .world-term-item p,
+.app-shell.dark-mode .world-linked-characters p,
+.app-shell.dark-mode .world-muted {
+  color: #c0bdce;
+}
+
+.app-shell.dark-mode .world-card-meta,
+.app-shell.dark-mode .world-card-actions {
+  border-color: #393448;
+  color: #c0bdce;
+}
+
+.app-shell.dark-mode .world-term-item {
+  background: #302337;
+}
+
+.app-shell.dark-mode .world-term-item b {
+  color: #ff9bc5;
+}
+
+.app-shell.dark-mode .world-linked-characters p {
+  background: #292d3d;
+}
+
+.app-shell.dark-mode .world-field input:not([type="checkbox"]),
+.app-shell.dark-mode .world-field textarea,
+.app-shell.dark-mode .world-term-editor input,
+.app-shell.dark-mode .world-term-editor textarea {
+  background: #25293a;
+  border-color: #484357;
+  color: #f2edf7;
+}
+
+.app-shell.dark-mode .world-subheading h3 {
+  color: #f2edf7;
+}
+
+.app-shell.dark-mode .world-term-editor {
+  background: #252131;
+  border-color: #393448;
+}
+
+.app-shell.dark-mode .world-character-option {
+  background: #25293a;
+  border-color: #393448;
+}
+
+.app-shell.dark-mode .world-character-option:has(input:checked) {
+  background: #392638;
+  border-color: #f1498c;
+}
+
+.app-shell.dark-mode .world-character-count {
+  background: #343c2a;
+  color: #d8f3a9;
+}
+
+.app-shell.dark-mode .world-small-button {
+  background: #352535;
+  border-color: #69415a;
+  color: #ffb0d1;
+}
+
+.app-shell.dark-mode .world-small-button:hover {
+  background: #493044;
+}
+
+.app-shell.dark-mode .world-small-button.danger,
+.app-shell.dark-mode .world-remove-button {
+  background: #352626;
+  border-color: #704444;
+  color: #ffb2b2;
+}
+
+.app-shell.dark-mode .world-empty-state {
+  border-style: dashed;
+}
+
+/* ===== 世界観登録・編集フォームのデザイン改善 ===== */
+
+.world-form-card {
+  padding: 32px;
+  margin: 28px 0 32px;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #ffffff, #fff9fc);
+  border: 1px solid #f0dce7;
+  box-shadow: 0 14px 40px rgba(70, 35, 60, 0.08);
+}
+
+.world-form-card .register-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 22px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #f0e3ea;
+}
+
+.world-form-card .register-heading h3 {
+  margin: 6px 0 0;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.world-form-card .register-heading .eyebrow {
+  margin: 0;
+  color: #d64d8b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.world-form-card .world-field {
+  margin-top: 26px;
+  line-height: 1.8;
+}
+
+.world-form-card .world-field > input:not([type="checkbox"]),
+.world-form-card .world-field > textarea {
+  box-sizing: border-box;
+  display: block;
+  min-height: 46px;
+  padding: 13px 15px;
+  border-radius: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.world-form-card .world-field > textarea {
+  min-height: 112px;
+}
+
+.world-form-card .world-field > input:focus,
+.world-form-card .world-field > textarea:focus,
+.world-form-card .world-term-editor input:focus,
+.world-form-card .world-term-editor textarea:focus {
+  outline: none;
+  border-color: #e879a9;
+  box-shadow: 0 0 0 3px rgba(232, 121, 169, 0.14);
+}
+
+.world-form-card .world-subheading {
+  margin-bottom: 12px;
+}
+
+.world-form-card .world-subheading strong,
+.world-form-card .world-field > strong {
+  font-size: 15px;
+}
+
+.world-form-card .world-muted {
+  margin: 8px 0;
+  line-height: 1.9;
+}
+
+.world-form-card .world-term-editor {
+  padding: 17px;
+  margin-top: 12px;
+  border-radius: 16px;
+  gap: 12px;
+}
+
+.world-form-card .world-term-editor input,
+.world-form-card .world-term-editor textarea {
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border-radius: 11px;
+}
+
+.world-form-card .world-character-picker {
+  margin-top: 16px;
+  gap: 12px;
+}
+
+.world-form-card .world-character-option {
+  padding: 15px;
+  border-radius: 14px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.world-form-card .register-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px solid #f0e3ea;
+}
+
+@media (max-width: 700px) {
+  .world-form-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .world-form-card .register-heading h3 {
+    font-size: 21px;
+  }
+
+  .world-form-card .register-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .world-form-card .register-actions button {
+    width: 100%;
+  }
+}
+
+/* ダークモード */
+.app-shell.dark-mode .world-form-card {
+  background: linear-gradient(145deg, #202333, #25202f);
+  border-color: #40364a;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+}
+
+.app-shell.dark-mode .world-form-card .register-heading {
+  border-color: #40364a;
+}
+
+.app-shell.dark-mode .world-form-card .register-heading h3,
+.app-shell.dark-mode .world-form-card .world-subheading strong,
+.app-shell.dark-mode .world-form-card .world-field > strong {
+  color: #f2edf7;
+}
+
+.app-shell.dark-mode .world-form-card .register-heading .eyebrow {
+  color: #ff9bc5;
+}
+
+.app-shell.dark-mode .world-form-card .register-actions {
+  border-color: #40364a;
+}
+
+.app-shell.dark-mode .world-form-card .world-term-editor {
+  background: #292434;
+  border-color: #40364a;
+}
+
+.app-shell.dark-mode .world-form-card .world-character-option {
+  background: #25293a;
+  border-color: #40364a;
+}
+
+.app-shell.dark-mode .world-form-card .world-character-option:has(input:checked) {
+  background: #392638;
+  border-color: #f1498c;
+}
+
+/* ===== 用語説明エリアの改善 ===== */
+
+.world-form-card .world-field:has(.world-subheading) {
+  padding: 20px;
+  border: 1px solid #f0e1e9;
+  border-radius: 18px;
+  background: #fffafd;
+}
+
+.world-form-card .world-subheading {
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.world-form-card .world-subheading strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.world-form-card .world-subheading strong::before {
+  content: "✦";
+  color: #e879a9;
+  font-size: 17px;
+}
+
+.world-form-card .world-field:has(.world-subheading) > .world-muted {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff1f7;
+}
+
+.app-shell.dark-mode .world-form-card .world-field:has(.world-subheading) {
+  background: #252131;
+  border-color: #40364a;
+}
+
+.app-shell.dark-mode .world-form-card .world-field:has(.world-subheading) > .world-muted {
+  background: #352535;
+  color: #d5c8d8;
+}
+
+/* ===== 追加した用語カードのデザイン改善 ===== */
+
+.world-form-card .world-term-editor {
+  position: relative;
+  gap: 12px;
+  padding: 20px;
+  margin-top: 14px;
+  border: 1px solid #f0dce7;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffffff, #fff7fb);
+  box-shadow: 0 5px 16px rgba(70, 35, 60, 0.04);
+}
+
+.world-form-card .world-term-editor::before {
+  content: "TERM";
+  display: block;
+  color: #d64d8b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.world-form-card .world-term-editor input,
+.world-form-card .world-term-editor textarea {
+  margin: 0;
+  background: #ffffff;
+}
+
+.world-form-card .world-term-editor input {
+  font-weight: 700;
+}
+
+.world-form-card .world-term-editor textarea {
+  min-height: 76px;
+}
+
+.world-form-card .world-term-editor .world-remove-button {
+  justify-self: end;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.world-form-card .world-term-editor .world-remove-button:hover {
+  background: #ffe8e8;
+  border-color: #e7aaaa;
+}
+
+.app-shell.dark-mode .world-form-card .world-term-editor {
+  background: linear-gradient(135deg, #292434, #252131);
+  border-color: #40364a;
+  box-shadow: none;
+}
+
+.app-shell.dark-mode .world-form-card .world-term-editor::before {
+  color: #ff9bc5;
+}
+
+.app-shell.dark-mode .world-form-card .world-term-editor input,
+.app-shell.dark-mode .world-form-card .world-term-editor textarea {
+  background: #202333;
+  border-color: #484357;
+  color: #f2edf7;
+}
+
+.app-shell.dark-mode .world-form-card .world-term-editor .world-remove-button:hover {
+  background: #493030;
+  border-color: #805050;
+}
+
+/* ===== キャラクター選択カードのデザイン改善 ===== */
+
+.world-form-card .world-character-picker {
+  gap: 14px;
+}
+
+.world-form-card .world-character-option {
+  position: relative;
+  min-height: 76px;
+  box-sizing: border-box;
+  padding: 17px 18px;
+  border: 1px solid #eee1e9;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff, #fffafd);
+  box-shadow: 0 4px 14px rgba(70, 35, 60, 0.035);
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.world-form-card .world-character-option:hover {
+  transform: translateY(-2px);
+  border-color: #e9a2c2;
+  box-shadow: 0 7px 18px rgba(70, 35, 60, 0.07);
+}
+
+.world-form-card .world-character-option input {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: #e84f91;
+  cursor: pointer;
+}
+
+.world-form-card .world-character-option span {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.world-form-card .world-character-option small {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.world-form-card .world-character-option:has(input:checked) {
+  border-color: #e879a9;
+  background: linear-gradient(135deg, #fff0f7, #fff8fc);
+  box-shadow: 0 5px 16px rgba(232, 121, 169, 0.12);
+}
+
+.world-form-card .world-character-option:has(input:checked)::after {
+  content: "✓ 選択中";
+  grid-column: 2;
+  justify-self: start;
+  margin-top: 3px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #f9d8e8;
+  color: #a52e65;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.app-shell.dark-mode .world-form-card .world-character-option {
+  background: linear-gradient(135deg, #25293a, #292434);
+  border-color: #40364a;
+}
+
+.app-shell.dark-mode .world-form-card .world-character-option:hover {
+  border-color: #a85c85;
+}
+
+.app-shell.dark-mode .world-form-card .world-character-option:has(input:checked) {
+  background: linear-gradient(135deg, #392638, #332537);
+  border-color: #e879a9;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.14);
+}
+
+.app-shell.dark-mode .world-form-card .world-character-option:has(input:checked)::after {
+  background: #59334b;
+  color: #ffc0da;
+}
+
+/* ===== 世界観フォーム：保存・キャンセルボタン ===== */
+
+.world-form-card .register-actions {
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 24px;
+}
+
+.world-form-card .register-actions .register-cancel,
+.world-form-card .register-actions .register-submit {
+  min-height: 46px;
+  padding: 12px 24px;
+  border-radius: 13px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.world-form-card .register-actions .register-cancel {
+  border: 1px solid #e8dce4;
+  background: #ffffff;
+  color: #777184;
+}
+
+.world-form-card .register-actions .register-submit {
+  border: 1px solid #e34f91;
+  background: linear-gradient(135deg, #f36ba5, #df4389);
+  color: #ffffff;
+  box-shadow: 0 5px 14px rgba(223, 67, 137, 0.2);
+}
+
+.world-form-card .register-actions .register-cancel:hover,
+.world-form-card .register-actions .register-submit:hover {
+  transform: translateY(-2px);
+}
+
+.world-form-card .register-actions .register-cancel:hover {
+  background: #fff2f7;
+}
+
+.world-form-card .register-actions .register-submit:hover {
+  box-shadow: 0 8px 20px rgba(223, 67, 137, 0.3);
+}
+
+.app-shell.dark-mode .world-form-card .register-actions .register-cancel {
+  background: #292b3b;
+  border-color: #484357;
+  color: #e1dce9;
+}
+
+.app-shell.dark-mode .world-form-card .register-actions .register-cancel:hover {
+  background: #383044;
+}
+
+.app-shell.dark-mode .world-form-card .register-actions .register-submit {
+  border-color: #e34f91;
+  background: linear-gradient(135deg, #e65d9a, #c9367a);
+  color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  .world-form-card .register-actions .register-cancel,
+  .world-form-card .register-actions .register-submit {
+    min-height: 48px;
+  }
+}
+
+/* ===== 世界観詳細ポップアップ ===== */
+
+.world-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(18, 20, 38, 0.62);
+  backdrop-filter: blur(7px);
+  overflow-y: auto;
+}
+
+.world-detail-modal {
+  position: relative;
+  width: min(1180px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding: 34px;
+  border: 1px solid #f0dce7;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #fff, #fff9fc);
+  color: #0f1c36;
+  box-shadow: 0 28px 90px rgba(12, 15, 35, 0.28);
+  animation: world-modal-appear 0.22s ease-out;
+}
+
+@keyframes world-modal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.world-modal-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 14px;
+  background: #adeb41;
+  color: #0f1c36;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.world-modal-close:hover {
+  transform: rotate(90deg);
+  background: #c4f274;
+}
+
+.world-detail-header {
+  padding: 8px 54px 26px 0;
+  border-bottom: 1px solid #f0e3ea;
+}
+
+.world-detail-header h2 {
+  margin: 10px 0;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.world-detail-header > p {
+  margin: 0;
+  color: #687186;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.world-detail-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+  align-items: start;
+}
+
+.world-detail-panel {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #f0e3ea;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.world-detail-panel h3 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.world-detail-character {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 5px;
+  margin-top: 9px;
+  padding: 13px;
+  border: 1px solid #f0e3ea;
+  border-radius: 13px;
+  background: #fff8fb;
+  color: #0f1c36;
+  text-align: left;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.world-detail-character:hover {
+  border-color: #e879a9;
+  background: #fff0f7;
+}
+
+.world-detail-character span {
+  color: #c43c7b;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.world-detail-description > p {
+  margin: 0;
+  color: #515c73;
+  line-height: 2;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.world-detail-term {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 13px;
+  background: #fff3f8;
+}
+
+.world-detail-term h4 {
+  margin: 0 0 7px;
+  color: #b72e68;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.world-detail-term p {
+  margin: 0;
+  color: #687186;
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.world-detail-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #f0e3ea;
+}
+
+@media (max-width: 800px) {
+  .world-modal-overlay {
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .world-detail-modal {
+    max-height: calc(100vh - 24px);
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .world-modal-close {
+    top: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .world-detail-header {
+    padding-top: 8px;
+    padding-right: 42px;
+  }
+
+  .world-detail-columns {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .world-detail-panel {
+    padding: 17px;
+  }
+}
+
+/* ダークモード */
+
+.app-shell.dark-mode .world-detail-modal {
+  background: linear-gradient(145deg, #202333, #25202f);
+  border-color: #40364a;
+  color: #f2edf7;
+}
+
+.app-shell.dark-mode .world-detail-header {
+  border-color: #40364a;
+}
+
+.app-shell.dark-mode .world-detail-header > p,
+.app-shell.dark-mode .world-detail-description > p {
+  color: #c0bdce;
+}
+
+.app-shell.dark-mode .world-detail-panel {
+  background: #25293a;
+  border-color: #40364a;
+}
+
+.app-shell.dark-mode .world-detail-character {
+  background: #302638;
+  border-color: #49364a;
+  color: #f2edf7;
+}
+
+.app-shell.dark-mode .world-detail-character:hover {
+  background: #392638;
+  border-color: #e879a9;
+}
+
+.app-shell.dark-mode .world-detail-character span {
+  color: #ff9bc5;
+}
+
+.app-shell.dark-mode .world-detail-term {
+  background: #302337;
+}
+
+.app-shell.dark-mode .world-detail-term h4 {
+  color: #ff9bc5;
+}
+
+.app-shell.dark-mode .world-detail-term p {
+  color: #c0bdce;
+}
+
+.app-shell.dark-mode .world-detail-actions {
+  border-color: #40364a;
+}
+
+/* ===== 世界観一覧をコンパクトな多列表示に ===== */
+
+.world-card-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.world-card {
+  padding: 17px;
+  border-radius: 18px;
+}
+
+.world-card-top {
+  margin-bottom: 12px;
+}
+
+.world-card-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+}
+
+.world-character-count {
+  padding: 5px 9px;
+  font-size: 11px;
+}
+
+.world-card h3 {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.world-card-description {
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.world-card-meta {
+  padding: 9px 0;
+  font-size: 11px;
+}
+
+.world-term-list,
+.world-linked-characters {
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.world-term-item {
+  padding: 10px;
+}
+
+.world-card-actions {
+  gap: 7px;
+  margin-top: 15px;
+  padding-top: 12px;
+}
+
+.world-small-button {
+  min-height: 34px;
+  padding: 7px 11px;
+  font-size: 12px;
+}
+
+/* 画面幅に合わせて列数を調整 */
+
+@media (max-width: 1100px) {
+  .world-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .world-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .world-card {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 440px) {
+  .world-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== キャラクター設定資料 PNG用シート ===== */
+.export-profile-sheet {
+  width: 100%;
+  max-width: 720px;
+  margin: 28px auto;
+  padding: 28px;
+  box-sizing: border-box;
+  border: 2px solid var(--export-accent);
+  border-radius: 18px;
+  font-family: inherit;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.export-profile-sheet * {
+  box-sizing: border-box;
+}
+
+.export-sheet-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding-bottom: 22px;
+  border-bottom: 2px solid var(--export-accent);
+}
+
+.export-sheet-main-image,
+.export-sheet-image-placeholder {
+  width: 160px;
+  min-width: 160px;
+  height: 190px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid var(--export-accent);
+}
+
+.export-sheet-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #8882;
+  font-size: 13px;
+}
+
+.export-sheet-header-text {
+  min-width: 0;
+  flex: 1;
+}
+
+.export-sheet-eyebrow {
+  margin: 0 0 8px;
+  color: var(--export-accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.export-sheet-header h2 {
+  margin: 0 0 12px;
+  color: var(--export-accent);
+  font-size: 28px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.export-sheet-header-text > p:not(.export-sheet-eyebrow) {
+  margin: 5px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.export-sheet-basic-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.export-sheet-basic-info span {
+  padding: 5px 9px;
+  border: 1px solid var(--export-accent);
+  border-radius: 7px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.export-sheet-section {
+  margin-top: 22px;
+  min-width: 0;
+}
+
+.export-sheet-section h3 {
+  margin: 0 0 12px;
+  padding: 0 0 7px;
+  border-bottom: 1px solid var(--export-accent);
+  color: var(--export-accent);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.export-sheet-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.export-sheet-profile-grid > p,
+.export-sheet-profile-grid > div {
+  min-width: 0;
+  margin: 0;
+  padding: 12px;
+  border: 2px solid color-mix(in srgb, var(--export-accent) 45%, transparent);
+  border-radius: 9px;
+}
+
+.export-sheet-profile-grid > p {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.export-sheet-profile-grid > p strong {
+  color: var(--export-accent);
+  font-size: 12px;
+}
+
+.export-sheet-long-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.export-sheet-image-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.export-sheet-image-gallery img {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  border: 1px solid var(--export-accent);
+  border-radius: 9px;
+}
+
+.export-sheet-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.export-sheet-status h3 {
+  width: 100%;
+}
+
+.export-sheet-status .recharts-wrapper {
+  max-width: 100%;
+}
+
+.export-profile-sheet .export-sheet-section > div > h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 600px) {
+  .export-profile-sheet {
+    padding: 16px;
+    margin: 18px auto;
+  }
+
+  .export-sheet-header {
+    gap: 12px;
+  }
+
+  .export-sheet-main-image,
+  .export-sheet-image-placeholder {
+    width: 105px;
+    min-width: 105px;
+    height: 135px;
+  }
+
+  .export-sheet-header h2 {
+    font-size: 21px;
+  }
+
+  .export-sheet-basic-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .export-sheet-profile-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .export-sheet-image-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* PNG保存ボタン：かわいい＆押すとへこむ */
+.png-export-controls .register-submit {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ff8fbd, #f1498c);
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 5px 0 #ce3474, 0 8px 14px rgba(241, 73, 140, 0.22);
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    filter 0.12s ease;
+}
+
+/* マウスを乗せたとき */
+.png-export-controls .register-submit:hover {
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #ce3474, 0 10px 16px rgba(241, 73, 140, 0.25);
+}
+
+/* 押した瞬間にへこむ */
+.png-export-controls .register-submit:active {
+  transform: translateY(4px) scale(0.98);
+  box-shadow: 0 1px 0 #ce3474, 0 3px 7px rgba(241, 73, 140, 0.2);
+}
+
+/* キーボード操作時のフォーカス */
+.png-export-controls .register-submit:focus-visible {
+  outline: 3px solid #f7a9cc;
+  outline-offset: 4px;
+}
+
+/* PNG保存コントロールの文字色 */
+.png-export-controls,
+.png-export-controls label {
+  color: var(--text-color, #242424);
+}
+
+/* ダークモード */
+.dark-mode .png-export-controls,
+.dark-mode .png-export-controls label {
+  color: #f5f5f5;
+}
+
+/* PNG保存のボタンを右端に配置 */
+.png-export-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.png-export-controls .register-submit {
+  margin-left: auto;
+}
+
+/* PNGの背景ラベルを読みやすくする */
+.png-export-controls label {
+  color: #242424 !important;
+}
+
+/* 背景選択のプルダウン */
+.png-export-controls select {
+  color: #242424 !important;
+  background-color: #ffffff !important;
+}
+
+/* PNG設定資料：プロフィール項目を1行にまとめる */
+.export-sheet-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.export-sheet-profile-grid > p {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* PNG設定資料：ステータスと好き・苦手を横並びにする */
+.export-sheet-bottom-row {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.export-sheet-bottom-row > .export-sheet-section {
+  min-width: 0;
+  margin: 0;
+}
+
+.export-sheet-bottom-row .export-sheet-status {
+  overflow: hidden;
+}
+
+.export-sheet-likes-dislikes {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.export-sheet-likes-dislikes > div {
+  min-width: 0;
+}
+
+.export-sheet-likes-dislikes .export-sheet-long-text {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+/* PNG設定資料：好き・苦手の余白と配置を統一 */
+.export-sheet-likes-dislikes {
+  gap: 12px;
+  align-self: stretch;
+  justify-content: flex-start;
+}
+
+.export-sheet-likes-dislikes > div {
+  flex: 1;
+  min-height: 0;
+  padding: 14px;
+  border: 1px solid var(--export-accent);
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.export-sheet-likes-dislikes h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.export-sheet-likes-dislikes .export-sheet-long-text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* PNG設定資料：プロフィール項目の入力文字を大きく */
+.export-sheet-profile-grid > p > span {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* PNG設定資料：年齢・性別・身長を横並びにする */
+.export-sheet-basic-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+}
+
+.export-sheet-basic-info > span {
+  min-width: 0;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .export-sheet-basic-info {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .export-sheet-basic-info > span {
+    padding: 6px 4px;
+    font-size: 12px;
+  }
+}
+
+/* PNG設定資料：年齢・性別・身長をテーマカラーにする */
+/* 項目名だけテーマカラー、入力内容は通常色 */
+.export-profile-sheet .export-sheet-basic-info > span {
+  color: #242424;
+}
+
+/* PNG設定資料：項目名と入力内容を同じ行に表示 */
+.export-profile-sheet .export-sheet-profile-grid > p {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.export-profile-sheet .export-sheet-profile-grid > p strong {
+  color: var(--export-accent);
+  flex-shrink: 0;
+}
+
+.export-profile-sheet .export-sheet-profile-grid > p span {
+  color: #242424;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* PNG設定資料：ヘッダーをメイン画像の高さに合わせる */
+.export-sheet-header {
+  align-items: stretch;
+  gap: 18px;
+}
+
+.export-sheet-main-image,
+.export-sheet-image-placeholder {
+  flex-shrink: 0;
+}
+
+.export-sheet-header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-width: 0;
+}
+
+.export-sheet-eyebrow {
+  margin-bottom: 4px;
+  font-size: 10px;
+}
+
+.export-sheet-header h2 {
+  margin-bottom: 8px;
+  font-size: 25px;
+  line-height: 1.25;
+}
+
+/* 世界観・作者を小さめにして横並び */
+.export-sheet-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 18px;
+  row-gap: 3px;
+  margin-bottom: 10px;
+  font-size: 11px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.export-sheet-meta-row span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* 年齢・性別・身長をテーマカラーのタグにする */
+.export-profile-sheet .export-sheet-basic-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.export-profile-sheet .export-sheet-basic-info > span {
+  flex: 0 1 auto;
+  min-width: 0;
+  padding: 5px 8px;
+  border: 1px solid var(--export-accent);
+  border-radius: 5px;
+  background-color: var(--export-accent);
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+/* iPhoneなど狭い画面での調整 */
+@media (max-width: 600px) {
+  .export-sheet-header {
+    gap: 12px;
+  }
+
+  .export-sheet-header h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .export-sheet-meta-row {
+    column-gap: 10px;
+    margin-bottom: 8px;
+    font-size: 10px;
+  }
+
+  .export-profile-sheet .export-sheet-basic-info {
+    gap: 4px;
+  }
+
+  .export-profile-sheet .export-sheet-basic-info > span {
+    padding: 4px 5px;
+    font-size: 9px;
+  }
+}
+
+/* PNG設定資料：画像の右側に3段構成で情報を配置 */
+.export-sheet-header {
+  align-items: stretch;
+  gap: 18px;
+}
+
+.export-sheet-header-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 0;
+  gap: 10px;
+}
+
+.export-sheet-title-block {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.export-sheet-eyebrow {
+  margin-bottom: 3px;
+  font-size: 9px;
+}
+
+.export-sheet-header h2 {
+  margin-bottom: 5px;
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.export-sheet-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-bottom: 0;
+  font-size: 10px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* 基本情報とプロフィール項目を画像の高さに収める */
+.export-sheet-header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  min-height: 0;
+  gap: 8px;
+}
+
+.export-profile-sheet .export-sheet-basic-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+  margin-top: 0;
+}
+
+.export-profile-sheet .export-sheet-basic-info > span {
+  flex: 0 1 auto;
+  min-width: 0;
+  padding: 4px 7px;
+  border: 1px solid var(--export-accent);
+  border-radius: 5px;
+  background: var(--export-accent);
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 1.35;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+/* 所属・種族・一人称・二人称をコンパクトに */
+.export-sheet-header .export-sheet-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+  min-width: 0;
+}
+
+.export-sheet-header .export-sheet-profile-grid > p {
+  min-width: 0;
+  margin: 0;
+  padding: 5px 6px;
+  border: 1px solid color-mix(
+    in srgb,
+    var(--export-accent) 45%,
+    transparent
+  );
+  border-radius: 5px;
+  font-size: 10px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.export-sheet-header .export-sheet-profile-grid > p strong {
+  font-size: 9px;
+}
+
+.export-sheet-header .export-sheet-profile-grid > p > span {
+  font-size: 10px;
+}
+
+/* ヘッダー以外のプロフィール欄から4項目を移動したため、
+   既存のプロフィール欄のレイアウトは変更しない */
+@media (max-width: 600px) {
+  .export-sheet-header {
+    gap: 12px;
+  }
+
+  .export-sheet-header h2 {
+    font-size: 19px;
+  }
+
+  .export-sheet-meta-row {
+    gap: 3px 8px;
+    font-size: 9px;
+  }
+
+  .export-profile-sheet .export-sheet-basic-info > span {
+    padding: 3px 5px;
+    font-size: 9px;
+  }
+
+  .export-sheet-header .export-sheet-profile-grid {
+    gap: 4px;
+  }
+
+  .export-sheet-header .export-sheet-profile-grid > p {
+    padding: 4px;
+    font-size: 9px;
+  }
+
+  .export-sheet-header .export-sheet-profile-grid > p strong,
+  .export-sheet-header .export-sheet-profile-grid > p > span {
+    font-size: 9px;
+  }
+}
+
+/* 所属〜二人称：4項目を横1列に配置 */
+.export-sheet-header .export-sheet-profile-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+}
+
+/* 項目の文字を約2倍に。縦幅は増やさない */
+.export-sheet-header .export-sheet-profile-grid > p {
+  min-width: 0;
+  margin: 0;
+  padding: 3px 2px;
+  border: 2px solid color-mix(
+    in srgb,
+    var(--export-accent) 45%,
+    transparent
+  );
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.export-sheet-header .export-sheet-profile-grid > p strong,
+.export-sheet-header .export-sheet-profile-grid > p > span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* 年齢・性別・身長：比率を保ってひと回り大きく */
+.export-profile-sheet .export-sheet-basic-info {
+  gap: 6px;
+}
+
+.export-profile-sheet .export-sheet-basic-info > span {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 6px 8px;
+  font-size: 15px;
+  line-height: 1.35;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* ステータス：各項目の周囲を四角い枠で囲む */
+.export-profile-sheet .export-sheet-stats-grid > *,
+.export-profile-sheet .export-sheet-stat-grid > * {
+  border: 2px solid var(--export-accent);
+  border-radius: 5px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* 年齢・性別・身長：現在の約2/3の大きさに */
+.export-profile-sheet .export-sheet-basic-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+  width: 100%;
+}
+
+.export-profile-sheet .export-sheet-basic-info > span {
+  min-width: 0;
+  padding: 4px 5px;
+  border: 1px solid var(--export-accent);
+  border-radius: 5px;
+  background: var(--export-accent);
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 1.3;
+  text-align: center;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+/* 所属〜二人称：2行×2列で均等配置 */
+.export-sheet-header .export-sheet-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, auto);
+  align-items: stretch;
+  gap: 5px;
+  min-width: 0;
+}
+
+/* 年齢などと同じタグ形式に統一 */
+.export-sheet-header .export-sheet-profile-grid > p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 5px 4px;
+  border: 1px solid var(--export-accent);
+  border-radius: 5px;
+  background: var(--export-accent);
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 1.3;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+.export-sheet-header .export-sheet-profile-grid > p strong,
+.export-sheet-header .export-sheet-profile-grid > p > span {
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+/* 項目名と内容を同じ行に並べる */
+.export-sheet-header .export-sheet-profile-grid > p strong {
+  flex: 0 0 auto;
+}
+
+.export-sheet-header .export-sheet-profile-grid > p > span {
+  min-width: 0;
+}
+
+/* 年齢・性別・身長：横幅を約2/3に */
+.export-profile-sheet .export-sheet-basic-info {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.export-profile-sheet .export-sheet-basic-info > span {
+  flex: 0 1 21%;
+  min-width: 0;
+  padding: 7px 5px;
+  border: 2px solid var(--export-accent);
+  border-radius: 12px;
+  background: var(--export-accent);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+/* 所属〜二人称：大きくポップに */
+.export-sheet-header .export-sheet-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.export-sheet-header .export-sheet-profile-grid > p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+  padding: 9px 7px;
+  border: 2px solid var(--export-accent);
+  border-radius: 12px;
+  background: var(--export-accent);
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+.export-sheet-header .export-sheet-profile-grid > p strong,
+.export-sheet-header .export-sheet-profile-grid > p > span {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+/* 名前も少しポップに */
+.export-sheet-header h2 {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
+
+/* 世界観・作者も読みやすく */
+.export-sheet-meta-row {
+  font-size: 13px;
+  font-weight: 700;
+  gap: 6px 14px;
+}
+
+/* タグの角を丸くしてポップな印象に */
+.export-profile-sheet .export-sheet-basic-info > span,
+.export-sheet-header .export-sheet-profile-grid > p {
+  box-shadow: 0 2px 0 color-mix(
+    in srgb,
+    var(--export-accent) 25%,
+    transparent
+  );
+}
+
+/* メイン画像を少し下げて、縦方向の中央に配置 */
+.export-sheet-header {
+  align-items: center;
+}
+
+.export-sheet-main-image {
+  align-self: center;
+  transform: translateY(10px);
+}
+
+/* PNG出力：上部レイアウトの最終調整 */
+.export-profile-sheet .export-sheet-header {
+  align-items: stretch;
+  gap: 18px;
+}
+
+.export-profile-sheet .export-sheet-header-text {
+  flex: 1;
+  min-width: 0;
+  gap: 8px;
+}
+
+.export-profile-sheet .export-sheet-title-block {
+  min-width: 0;
+}
+
+.export-profile-sheet .export-sheet-header h2 {
+  font-size: 26px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.export-profile-sheet .export-sheet-meta-row {
+  gap: 4px 14px;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* 年齢・性別・身長：3つを横並び */
+.export-profile-sheet .export-sheet-basic-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
+  margin: 0;
+}
+
+.export-profile-sheet .export-sheet-basic-info > span {
+  min-width: 0;
+  padding: 6px 5px;
+  border: 1px solid var(--export-accent);
+  border-radius: 8px;
+  background: var(--export-accent);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+/* 所属・種族・一人称・二人称：2列×2行 */
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  min-width: 0;
+}
+
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+  margin: 0;
+  padding: 7px 5px;
+  border: 1px solid var(--export-accent);
+  border-radius: 8px;
+  background: var(--export-accent);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p strong,
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p > span {
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+/* メイン画像の位置・出力処理は変更しない */
+
+/* PNG出力：メイン画像を大きくする */
+.export-profile-sheet .export-sheet-header {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  align-items: center;
+  gap: 36px;
+}
+
+.export-profile-sheet .export-sheet-main-image {
+  width: 100%;
+  height: 380px;
+  object-fit: contain;
+  object-position: center;
+  box-sizing: border-box;
+}
+
+.export-profile-sheet .export-sheet-header-text {
+  min-width: 0;
+}
+
+/* 右側の基本情報が横幅に収まるようにする */
+.export-profile-sheet .export-sheet-basic-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
+}
+
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+/* PNG出力：メイン画像と右側の情報欄のバランス調整 */
+.export-profile-sheet .export-sheet-header {
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.export-profile-sheet .export-sheet-main-image {
+  width: 100%;
+  height: 360px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* 右側の情報欄を縦方向にバランスよく配置 */
+.export-profile-sheet .export-sheet-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  min-width: 0;
+  gap: 18px;
+}
+
+/* 名前の部分：右側の空白を活用 */
+.export-profile-sheet .export-sheet-title-block {
+  width: 100%;
+  min-width: 0;
+}
+
+.export-profile-sheet .export-sheet-header h2 {
+  font-size: 30px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+/* 世界観・作者の文字サイズは維持 */
+.export-profile-sheet .export-sheet-meta-row {
+  font-size: 12px;
+}
+
+/* 年齢・性別・身長：横幅いっぱいに均等配置 */
+.export-profile-sheet .export-sheet-basic-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+}
+
+.export-profile-sheet .export-sheet-basic-info > span {
+  min-width: 0;
+  padding: 8px 4px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+/* 所属・種族・一人称・二人称：横幅いっぱいに配置 */
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p {
+  min-width: 0;
+  min-height: 58px;
+  padding: 8px 6px;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* PNG出力：右側の情報をまとめ、名前を大きく見せる */
+.export-profile-sheet .export-sheet-header {
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.export-profile-sheet .export-sheet-main-image {
+  width: 100%;
+  height: 360px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.export-profile-sheet .export-sheet-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+  min-width: 0;
+  gap: 18px;
+}
+
+/* 名前：少し大きめに */
+.export-profile-sheet .export-sheet-title-block {
+  width: 100%;
+  min-width: 0;
+}
+
+.export-profile-sheet .export-sheet-header h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+/* 世界観・作者と基本情報をひとまとめにする */
+.export-profile-sheet .export-sheet-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* 世界観・作者の文字サイズはそのまま */
+.export-profile-sheet .export-sheet-meta-row {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+/* 年齢・性別・身長は横並びを維持 */
+.export-profile-sheet .export-sheet-basic-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+}
+
+.export-profile-sheet .export-sheet-basic-info > span {
+  min-width: 0;
+  padding: 8px 4px;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+/* 所属など4項目を、そのすぐ下に配置 */
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  margin-top: 0;
+}
+
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p {
+  min-width: 0;
+  min-height: 58px;
+  padding: 8px 6px;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* PNG出力：右側の大きな空白を解消する最終修正 */
+.export-profile-sheet .export-sheet-header {
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.export-profile-sheet .export-sheet-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: stretch;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* 名前を大きめにし、残りの幅を活用 */
+.export-profile-sheet .export-sheet-title-block {
+  width: 100%;
+  min-width: 0;
+}
+
+.export-profile-sheet .export-sheet-header h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+
+/* 世界観・作者のサイズは維持 */
+.export-profile-sheet .export-sheet-meta-row {
+  margin: 0;
+}
+
+/* 年齢などと所属などを、間隔を空けずに縦に並べる */
+.export-profile-sheet .export-sheet-header-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  gap: 12px;
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+}
+
+/* 年齢・性別・身長は現在の横並びを維持 */
+.export-profile-sheet .export-sheet-basic-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+}
+
+/* 所属・種族・一人称・二人称はすぐ下に配置 */
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p {
+  min-height: 58px;
+  margin: 0;
+}
+
+/* PNG出力：名前を大きくし、名前より下の情報を少し下げる */
+.export-profile-sheet .export-sheet-header h2 {
+  font-size: 50px;
+  line-height: 1.2;
+}
+
+/* 世界観・作者を少し下へ */
+.export-profile-sheet .export-sheet-meta-row {
+  margin-top: 10px;
+}
+
+/* 年齢・性別・身長、所属なども一緒に少し下へ */
+.export-profile-sheet .export-sheet-header-info {
+  margin-top: 6px;
+}
+
+/* PNG出力：所属〜二人称の文字を大きくして中央揃え */
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* 項目名と入力内容を約1.5倍に */
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p strong,
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p > span {
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+/* PNG出力：所属〜二人称の項目名と入力文字のズレを修正 */
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+}
+
+/* 項目名と入力文字のサイズ・行の高さを統一 */
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p strong,
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p > span {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1.35;
+  vertical-align: baseline;
+  text-align: center;
+}
+
+/* PNG出力：所属〜二人称の文字をボックスの上下中央に配置 */
+.export-profile-sheet .export-sheet-header .export-sheet-profile-grid > p {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* PNG出力：パソコン版だけメイン画像を少し小さくする */
+@media (min-width: 601px) {
+  .export-profile-sheet .export-sheet-header {
+    grid-template-columns: 236px minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .export-profile-sheet .export-sheet-main-image {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+/* PNG出力：スマホ版のメイン画像をほんの少し小さく */
+@media (max-width: 600px) {
+  .export-profile-sheet .export-sheet-header {
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .export-profile-sheet .export-sheet-main-image {
+    width: 100%;
+    height: 315px;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+/* 関係図画面 */
+.relation-modal {
+  width: min(1000px, 94vw);
+  max-width: 1000px;
+}
+
+.relation-map-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.relation-map-content {
+  width: 100%;
+  min-height: 550px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 20px;
+}
+
+.relation-map-canvas {
+  position: relative;
+  width: 600px;
+  height: 500px;
+  flex-shrink: 0;
+}
+
+.relation-map-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.relation-character-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 140px;
+min-height: 64px;
+white-space: normal;
+overflow-wrap: anywhere;
+white-space: nowrap;
+  padding: 12px 18px;
+  border: 2px solid #f1498c;
+  border-radius: 14px;
+  background: white;
+  color: #0f1c36;
+  font-weight: 700;
+  text-align: center;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(15, 28, 54, 0.12);
+}
+
+/* 関係入力フォーム */
+.relation-form {
+  width: min(100%, 620px);
+  margin: 24px auto;
+  padding: 28px;
+  border: 1px solid #f3d6e4;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 28, 54, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.relation-form h3 {
+  margin: 0 0 8px;
+  color: #0f1c36;
+  font-size: 20px;
+}
+
+.relation-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #0f1c36;
+  font-weight: 600;
+}
+
+.relation-form input,
+.relation-form select,
+.relation-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dce1ea;
+  border-radius: 10px;
+  background: #fff;
+  color: #0f1c36;
+  font: inherit;
+}
+
+.relation-form input:focus,
+.relation-form select:focus,
+.relation-form textarea:focus {
+  outline: 2px solid #f1498c;
+  border-color: #f1498c;
+}
+
+.relation-form textarea {
+  resize: vertical;
+}
+/* 関係詳細画面 */
+.relation-detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 28, 54, 0.55);
+}
+
+.relation-detail-card {
+  position: relative;
+  width: min(520px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 32px;
+  border-radius: 20px;
+  background: #fff;
+  color: #0f1c36;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.relation-detail-card h3 {
+  margin: 0 0 24px;
+  font-size: 22px;
+}
+
+.relation-detail-card > p {
+  margin: 12px 0;
+  line-height: 1.7;
+}
+
+.relation-detail-card > div:not(.register-actions) {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid #e8eaf0;
+}
+
+.relation-detail-card > div > p {
+  margin: 8px 0 0;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.relation-detail-card .register-actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+/* 関係図の色分け凡例 */
+.relation-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin: 16px auto 24px;
+  padding: 14px 20px;
+  border: 1px solid #e8eaf0;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.relation-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #0f1c36;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.legend-dot.friend { background: #4A90E2; }
+.legend-dot.family { background: #55B879; }
+.legend-dot.lover { background: #f1498c; }
+.legend-dot.rival { background: #F39C45; }
+.legend-dot.enemy { background: #E74C3C; }
+.legend-dot.other { background: #8993A4; }
+
