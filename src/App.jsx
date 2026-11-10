@@ -92,6 +92,15 @@ export default function App() {
   const [loginPassword, setLoginPassword] = useState("");
   const [loginError, setLoginError] = useState("");
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [isSettingInitialPassword, setIsSettingInitialPassword] = useState(() => {
+  const params = new URLSearchParams(window.location.hash.slice(1));
+  return params.get("type") === "invite";
+});
+
+const [newPassword, setNewPassword] = useState("");
+const [confirmPassword, setConfirmPassword] = useState("");
+const [passwordError, setPasswordError] = useState("");
+const [isSettingPassword, setIsSettingPassword] = useState(false);
 
   useEffect(() => {
     let mounted = true;
@@ -143,6 +152,53 @@ export default function App() {
     }
   };
 
+
+    const handleInitialPasswordSetup = async (event) => {
+    event.preventDefault();
+
+    setPasswordError("");
+
+    if (newPassword.length < 8) {
+      setPasswordError("パスワードは8文字以上にしてください。");
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      setPasswordError("確認用パスワードが一致しません。");
+      return;
+    }
+
+    setIsSettingPassword(true);
+
+    try {
+      const { error } = await supabase.auth.updateUser({
+        password: newPassword,
+      });
+
+      if (error) {
+        setPasswordError(
+          "パスワードを設定できませんでした。招待メールのリンクを開き直してください。"
+        );
+        return;
+      }
+
+      setIsSettingInitialPassword(false);
+      setNewPassword("");
+      setConfirmPassword("");
+
+      // 招待用のURL情報を取り除く
+      window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+      );
+    } catch {
+      setPasswordError("通信に失敗しました。接続を確認してください。");
+    } finally {
+      setIsSettingPassword(false);
+    }
+  };
+  
     const [profileTheme, setProfileTheme] = useState(() => {
     return localStorage.getItem("profileTheme") || "pink";
   });
@@ -841,6 +897,53 @@ const relationMapRelationships = selectedRelationWorld
   if (checkingAuth) {
     return <div className="loading-screen">ログイン状態を確認しています...</div>;
   }
+  if (session && isSettingInitialPassword) {
+    return (
+      <div className="login-screen">
+        <form
+          className="login-form"
+          onSubmit={handleInitialPasswordSetup}
+        >
+          <h1>うちの子図鑑</h1>
+          <p>初回パスワード設定</p>
+          <p>これから使用するパスワードを設定してください。</p>
+
+          <label htmlFor="new-password">新しいパスワード</label>
+          <input
+            id="new-password"
+            type="password"
+            value={newPassword}
+            onChange={(event) => setNewPassword(event.target.value)}
+            autoComplete="new-password"
+            minLength={8}
+            required
+          />
+
+          <label htmlFor="confirm-password">パスワード（確認用）</label>
+          <input
+            id="confirm-password"
+            type="password"
+            value={confirmPassword}
+            onChange={(event) => setConfirmPassword(event.target.value)}
+            autoComplete="new-password"
+            minLength={8}
+            required
+          />
+
+          {passwordError && (
+            <p role="alert">{passwordError}</p>
+          )}
+
+          <button type="submit" disabled={isSettingPassword}>
+            {isSettingPassword
+              ? "設定中..."
+              : "パスワードを設定する"}
+          </button>
+        </form>
+      </div>
+    );
+  }
+
 
   if (!session) {
     return (
