@@ -484,10 +484,9 @@ useEffect(() => {
       if (characterError) throw characterError;
 
       const { data: worldRows, error: worldError } = await supabase
-        .from("worlds")
-        .select("id, data")
-        .order("created_at", { ascending: true });
-
+  .from("worlds")
+  .select("id, user_id, data")
+  .order("created_at", { ascending: true });
       if (worldError) throw worldError;
       const { data: relationshipRows, error: relationshipError } = await supabase
   .from("relationships")
@@ -513,11 +512,12 @@ setCharacters(
 setCommunityCharacters(allCharacters);
 
       setWorlds(
-        (worldRows || []).map((row) => ({
-          ...row.data,
-          id: row.data?.id ?? row.id,
-        }))
-      );
+  (worldRows || []).map((row) => ({
+    ...row.data,
+    id: row.data?.id ?? row.id,
+    user_id: row.user_id,
+  }))
+);
       setRelationships(relationshipRows || []);
     } catch (error) {
       console.error("Supabaseからの読み込みに失敗しました:", error);
@@ -561,12 +561,18 @@ setCommunityCharacters(allCharacters);
 // キャラクターをSupabaseにも保存
 useEffect(() => {
   if (!dataLoaded || !session?.user?.id) return;
-  if (characters.length === 0) return;
+
+  // 自分が所有しているキャラクターだけを保存する
+  const myCharacters = characters.filter(
+    (character) => character.user_id === session.user.id
+  );
+
+  if (myCharacters.length === 0) return;
 
   const saveCharactersToCloud = async () => {
-    const rows = characters.map((character) => ({
+    const rows = myCharacters.map((character) => ({
       id: String(character.id),
-      user_id: session.user.id,
+      user_id: character.user_id,
       data: character,
       updated_at: new Date().toISOString(),
     }));
@@ -616,13 +622,20 @@ useEffect(() => {
 // 世界観をSupabaseにも保存
 useEffect(() => {
   if (!dataLoaded || !session?.user?.id) return;
-  if (worlds.length === 0) return;
+
+  // 自分が作成した世界観だけ保存する
+  const myWorlds = worlds.filter(
+    (world) => world.user_id === session.user.id
+  );
+
+  if (myWorlds.length === 0) return;
 
   const saveWorldsToCloud = async () => {
-    const rows = worlds.map((world) => ({
+    const rows = myWorlds.map((world) => ({
       id: String(world.id),
-      user_id: session.user.id,
+      user_id: world.user_id,
       data: world,
+      updated_at: new Date().toISOString(),
     }));
 
     const { error } = await supabase
@@ -657,13 +670,15 @@ useEffect(() => {
 
     
     const nextWorld = {
-      id: editingWorldId || `world-${Date.now()}`,
-      name,
-      description,
-      terms: worldTermDrafts.filter((term) => term.name.trim() || term.description.trim()),
-      characterIds: worldCharacterIds,
-    };
-
+  id: editingWorldId || `world-${Date.now()}`,
+  user_id: editingWorldId
+    ? worlds.find((world) => String(world.id) === String(editingWorldId))?.user_id ?? session.user.id
+    : session.user.id,
+  name,
+  description,
+  terms,
+  characterIds
+};
     setWorlds((current) => {
       const withoutMovedCharacters = current.map((world) => {
         if (world.id === editingWorldId) return nextWorld;
@@ -708,7 +723,7 @@ useEffect(() => {
   alert("世界観を削除しました。");
 };
 
-// ほかのメンバーの変更をリアルタイムで受信
+   // ほかのメンバーの変更をリアルタイムで受信
 useEffect(() => {
   if (!dataLoaded || !session?.user?.id) return;
 
@@ -732,28 +747,29 @@ useEffect(() => {
               (character) => String(character.id) !== deletedId
             )
           );
+
+          setCommunityCharacters((current) =>
+            current.filter(
+              (character) => String(character.id) !== deletedId
+            )
+          );
+
           return;
         }
 
         const newCharacter = {
           ...payload.new.data,
           id: payload.new.data?.id ?? payload.new.id,
+          user_id: payload.new.user_id,
         };
 
-        setCharacters((current) => {
-          const existing = current.find(
+        setCommunityCharacters((current) => {
+          const exists = current.some(
             (character) =>
               String(character.id) === String(newCharacter.id)
           );
 
-          if (
-            existing &&
-            JSON.stringify(existing) === JSON.stringify(newCharacter)
-          ) {
-            return current;
-          }
-
-          if (!existing) return [...current, newCharacter];
+          if (!exists) return [...current, newCharacter];
 
           return current.map((character) =>
             String(character.id) === String(newCharacter.id)
@@ -761,6 +777,23 @@ useEffect(() => {
               : character
           );
         });
+
+        if (newCharacter.user_id === session.user.id) {
+          setCharacters((current) => {
+            const exists = current.some(
+              (character) =>
+                String(character.id) === String(newCharacter.id)
+            );
+
+            if (!exists) return [...current, newCharacter];
+
+            return current.map((character) =>
+              String(character.id) === String(newCharacter.id)
+                ? newCharacter
+                : character
+            );
+          });
+        }
       }
     )
 
@@ -787,21 +820,15 @@ useEffect(() => {
         const newWorld = {
           ...payload.new.data,
           id: payload.new.data?.id ?? payload.new.id,
+          user_id: payload.new.user_id,
         };
 
         setWorlds((current) => {
-          const existing = current.find(
+          const exists = current.some(
             (world) => String(world.id) === String(newWorld.id)
           );
 
-          if (
-            existing &&
-            JSON.stringify(existing) === JSON.stringify(newWorld)
-          ) {
-            return current;
-          }
-
-          if (!existing) return [...current, newWorld];
+          if (!exists) return [...current, newWorld];
 
           return current.map((world) =>
             String(world.id) === String(newWorld.id)
@@ -811,7 +838,8 @@ useEffect(() => {
         });
       }
     )
-        // 関係データの変更を受信
+
+    // 関係データの変更を受信
     .on(
       "postgres_changes",
       {
@@ -834,19 +862,12 @@ useEffect(() => {
         const newRelation = payload.new;
 
         setRelationships((current) => {
-          const existing = current.find(
+          const exists = current.some(
             (relation) =>
               String(relation.id) === String(newRelation.id)
           );
 
-          if (
-            existing &&
-            JSON.stringify(existing) === JSON.stringify(newRelation)
-          ) {
-            return current;
-          }
-
-          if (!existing) return [...current, newRelation];
+          if (!exists) return [...current, newRelation];
 
           return current.map((relation) =>
             String(relation.id) === String(newRelation.id)
@@ -1183,6 +1204,7 @@ const sampleVoice = formData.get("sampleVoice").trim();
                 
 const newCharacter = {
   id: editingCharacter ? editingCharacter.id : Date.now(),
+  user_id: editingCharacter?.user_id ?? session.user.id,
   name,
   world,
   age,
@@ -1204,7 +1226,11 @@ const newCharacter = {
   images: editingCharacter
   ? [...editingImages, ...selectedImages]
   : selectedImages,
-  author: editingCharacter ? editingCharacter.author : "あなた",
+  author: editingCharacter
+  ? editingCharacter.author
+  : (session.user.user_metadata?.display_name ||
+     session.user.user_metadata?.name ||
+     "メンバー"),
   tags,
   color,
   description,
@@ -1983,25 +2009,49 @@ alert(
       if (confirmed) {
   const characterId = String(selectedCharacter.id);
 
-  const { error } = await supabase
-    .from("characters")
-    .delete()
-    .eq("id", characterId);
+console.log("削除対象:", selectedCharacter);
+console.log("ログイン中のユーザーID:", session.user.id);
+console.log("キャラクターの所有者ID:", selectedCharacter.user_id);
 
-  if (error) {
-    console.error("キャラクターの削除に失敗しました:", error);
-    alert("削除に失敗しました。もう一度お試しください。");
-    return;
-  }
+  const { data: deletedRows, error } = await supabase
+  .from("characters")
+  .delete()
+  .eq("id", String(characterId))
+  .eq("user_id", session.user.id)
+  .select("id");
 
-  setCharacters((currentCharacters) =>
-    currentCharacters.filter(
-      (character) => String(character.id) !== characterId
-    )
-  );
+console.log("削除結果:", deletedRows);
+console.log("削除エラー:", error);
 
-  setSelectedCharacter(null);
-  alert("キャラクターを削除しました。");
+if (error) {
+  console.error("キャラクターの削除に失敗しました:", error);
+  alert("キャラクターの削除に失敗しました。");
+  return;
+}
+
+if (!deletedRows || deletedRows.length === 0) {
+  console.error("削除対象が見つからないか、削除権限がありません。");
+  alert("削除できませんでした。自分が登録したキャラクターか確認してください。");
+  return;
+}
+
+// 自分のキャラクター一覧から削除
+setCharacters((current) =>
+  current.filter(
+    (character) => String(character.id) !== String(characterId)
+  )
+);
+
+// 共有キャラクター一覧からも削除
+setCommunityCharacters((current) =>
+  current.filter(
+    (character) => String(character.id) !== String(characterId)
+  )
+);
+
+setSelectedCharacter(null);
+
+alert("キャラクターを削除しました。");
 }
     }}
   >
