@@ -674,10 +674,14 @@ useEffect(() => {
   user_id: editingWorldId
     ? worlds.find((world) => String(world.id) === String(editingWorldId))?.user_id ?? session.user.id
     : session.user.id,
-  name,
+    name,
   description,
-  terms,
-  characterIds
+  terms: worldTermDrafts.filter(
+    (term) =>
+      String(term.name ?? "").trim() ||
+      String(term.description ?? "").trim()
+  ),
+  characterIds: worldCharacterIds,
 };
     setWorlds((current) => {
       const withoutMovedCharacters = current.map((world) => {
@@ -757,6 +761,9 @@ useEffect(() => {
           return;
         }
 
+// 自分自身が保存した変更は再受信しない
+if (payload.new.user_id === session.user.id) return;
+
         const newCharacter = {
           ...payload.new.data,
           id: payload.new.data?.id ?? payload.new.id,
@@ -771,11 +778,17 @@ useEffect(() => {
 
           if (!exists) return [...current, newCharacter];
 
-          return current.map((character) =>
-            String(character.id) === String(newCharacter.id)
-              ? newCharacter
-              : character
-          );
+return current.map((character) => {
+  if (String(character.id) !== String(newCharacter.id)) {
+    return character;
+  }
+
+  if (JSON.stringify(character) === JSON.stringify(newCharacter)) {
+    return character;
+  }
+
+  return newCharacter;
+});
         });
 
         if (newCharacter.user_id === session.user.id) {
@@ -817,6 +830,9 @@ useEffect(() => {
           return;
         }
 
+        // 自分自身が保存した変更は再受信しない
+        if (payload.new.user_id === session.user.id) return;
+
         const newWorld = {
           ...payload.new.data,
           id: payload.new.data?.id ?? payload.new.id,
@@ -830,11 +846,17 @@ useEffect(() => {
 
           if (!exists) return [...current, newWorld];
 
-          return current.map((world) =>
-            String(world.id) === String(newWorld.id)
-              ? newWorld
-              : world
-          );
+return current.map((world) => {
+  if (String(world.id) !== String(newWorld.id)) {
+    return world;
+  }
+
+  if (JSON.stringify(world) === JSON.stringify(newWorld)) {
+    return world;
+  }
+
+  return newWorld;
+});
         });
       }
     )
@@ -858,6 +880,9 @@ useEffect(() => {
           );
           return;
         }
+
+        // 自分自身が保存した変更は再受信しない
+        if (payload.new.user_id === session.user.id) return;
 
         const newRelation = payload.new;
 
@@ -905,14 +930,23 @@ const relationMapRelationships = selectedRelationWorld
   : [];
 
   const filteredCharacters = characters.filter((character) => {
-    const keyword = search.toLowerCase();
+  const keyword = String(search ?? "").toLowerCase();
 
-    return (
-      character.name.toLowerCase().includes(keyword) ||
-      character.world.toLowerCase().includes(keyword) ||
-      character.tags.some((tag) => tag.toLowerCase().includes(keyword))
-    );
-  });
+  const name = String(character?.name ?? "").toLowerCase();
+  const world = String(character?.world ?? "").toLowerCase();
+
+  const tags = Array.isArray(character?.tags)
+    ? character.tags
+    : [];
+
+  return (
+    name.includes(keyword) ||
+    world.includes(keyword) ||
+    tags.some((tag) =>
+      String(tag ?? "").toLowerCase().includes(keyword)
+    )
+  );
+});
 
   
   if (checkingAuth) {
@@ -1658,12 +1692,15 @@ alert(
   <p className="character-description-text">
     {selectedCharacter.description || "紹介文はまだありません。"}
   </p>
-
-  {selectedCharacter.images?.length > 0 && (
+{Array.isArray(selectedCharacter.images) &&
+  selectedCharacter.images.length > 0 && (
     <>
       <div className="character-description-divider" />
       <div className="character-detail-images">
-        {selectedCharacter.images.map((image, index) => (
+        {(Array.isArray(selectedCharacter.images)
+  ? selectedCharacter.images
+  : []
+).map((image, index) => (
           <img
             key={index}
             src={image}
@@ -1784,17 +1821,21 @@ alert(
   <div className="character-bottom-card">
     <strong>🏷️ タグ</strong>
     <div className="tag-list">
-      {selectedCharacter.tags.map((tag) => (
-        <span className="tag" key={tag}>
+      {(Array.isArray(selectedCharacter?.tags)
+        ? selectedCharacter.tags
+        : []
+      ).map((tag, index) => (
+        <span className="tag" key={`${tag}-${index}`}>
           #{tag}
         </span>
       ))}
-      {selectedCharacter.tags.length === 0 && (
+
+      {(!Array.isArray(selectedCharacter?.tags) ||
+        selectedCharacter.tags.length === 0) && (
         <span>タグはまだありません。</span>
       )}
     </div>
   </div>
-
   <div className="character-bottom-card">
     <strong>🎨 メインカラー</strong>
     <div className="character-main-color">
@@ -1887,7 +1928,10 @@ alert(
               <section className="export-sheet-section">
                 <h3>その他の画像</h3>
                 <div className="export-sheet-image-gallery">
-                  {selectedCharacter.images.slice(1).map((image, index) => (
+                  {(Array.isArray(selectedCharacter.images)
+  ? selectedCharacter.images.slice(1)
+  : []
+).map((image, index) => (
                     <img
                       key={index}
                       src={image}
